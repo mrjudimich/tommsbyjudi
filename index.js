@@ -127,22 +127,16 @@ app.post('/webhook/', function (req, res) {
             if (upperCasedText.includes('ORDER PIZZA')) {
                 sendPizzaCTA(sender);
                 continue;
-			} else if (upperCasedText.includes('vaovao')) {
+			} else if (upperCasedText.includes('VAOVAO')) {
                 sendTextMessage(sender, "Mbola tsy misy vaovao aloha atreno");
                 continue
-			} else if (upperCasedText.includes('fa ahoana fotsiny')) {
+			} else if (upperCasedText.includes('FA AHOANA FOTSINY')) {
                 sendTextMessage(sender, "Ka omaly anie talaka grobaka e!");
                 continue
-			} else if (upperCasedText.includes('dia aona zany')) {
+			} else if (upperCasedText.includes('DIA AONA ZANY')) {
                 sendTextMessage(sender, "Mandehana mody aloha e!");
                 continue
-			} else if (upperCasedText.includes('AWESOME')) {
-                sendTextMessage(sender, "Glad you liked it! \ud83d\ude0a");
-                continue
-			} else if (upperCasedText.includes('AWESOME')) {
-                sendTextMessage(sender, "Glad you liked it! \ud83d\ude0a");
-                continue
-            } else if (upperCasedText.includes('WHO BUILT THIS')) {
+			} else if (upperCasedText.includes('WHO BUILT THIS')) {
                 sendAppboyMessage(sender)
                 continue
             } else if (upperCasedText.includes('MARKETING')) {
