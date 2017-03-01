@@ -174,7 +174,7 @@ app.use(function (err, req, res, next) {
 });
 
 // FACEBOOK MESSENGER AUTH TOKEN
-var FACEBOOK_ACCESS_TOKEN = process.env.FACEBOOK_ACCESS_TOKEN;
+var FACEBOOK_ACCESS_TOKEN = "EAAI7ccGDI6ABABm1GBuwANsjUfNZAhSNeYeNqjylSoZANDC5It2DI4X8OghWPlZAjsP4Tn0LFZBqJUTHX1trOrTBDiru8CN2cvLQTndjt6rLaJBBvsxnBJ0Sw1c5hYcMo2ZBQKjq0GH4yMBE8aHKKsRpfAOIcu9ReTWSu0SnuvAZDZD";
 
 /**
  * Sends a message to a given Facebook Messenger ID using a POST request to the Facebook Send API
