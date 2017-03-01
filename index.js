@@ -61,7 +61,7 @@ io.on('connection', function (socket) {
 
 // for Facebook verification
 app.get('/webhook/', function (req, res) {
-    if (req.query['hub.verify_token'] === process.env.FACEBOOK_VERIFY_TOKEN) {
+    if (req.query['hub.verify_token'] === 'judi_bot_token') {
         res.send(req.query['hub.challenge']);
     }
     res.send('Error, wrong token');
