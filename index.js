@@ -439,7 +439,6 @@ function sendAirlineTemplate(sender) {
           }
         }    
     }
-
     sendMessage(sender, messageData);
 }
 
