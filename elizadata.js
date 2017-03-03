@@ -4,74 +4,74 @@
 // [cf: Communications of the ACM, Vol. 9, #1 (January 1966): p 36-45.]
 
 exports.elizaInitials = [
-	"Fahasalamanao?",
+	"How do you do.",
 // additions (not original)
-	"Lazalazao amiko oe inona no tena manahirana anao",
-	"Misy zavatra manahirana anao ve?"
+	"Please tell me what's been bothering you.",
+	"Is something troubling you ?"
 ];
 
 exports.elizaFinals = [
-	"Mandrampihaona indray ary. Dia mankasitraka fa nahafinaritra ny niresaka taminao",
+	"Goodbye.  It was nice talking to you.",
 // additions (not original)
-	"Veloma indray ary. Tena nahafinaritra ahy ny niresaka taminao androany",
-	"Manantena ny hiresaka aminao indray zah, amin'ny manaraka. mandrapiaona",
-	"Tena nahafinaritra ny resakatsika teo, sa tsy izany? Indry anefa fa manampetra ny ora. Veloma indray ary.",
-	"Manantena ny hiresaka aminay indray amin'ny manaraka?  Mandrampihaona."
+	"Goodbye.  This was really a nice talk.",
+	"Goodbye.  I'm looking forward to our next session.",
+	"This was a good session, wasn't it -- but time is over now.   Goodbye.",
+	"Maybe we could discuss this moreover in our next session ?   Goodbye."
 ];
 
 exports.elizaQuits = [
-	"okay",
-	"veloma",
-	"vita",
-	"hivoaka",
-	"hiala"
+	"bye",
+	"goodbye",
+	"done",
+	"exit",
+	"quit"
 ];
 
 exports.elizaPres = [
-	"tsy", "tsia",
-	"tsy afaka", "tsiafaka",
-	"tsy ho afaka", "tsy poince",
-	"mahatadidy", "mahatsiaro",
-	"mahatsiaro", "mitamberina ao antsaina",
-	"nanofy", "nanofy",
-	"nofy", "nofy",
-	"mety ho", "ngamba",
-	"tena marina izany", "ie izany tokoa",
-	"solosaina", "ordinatera",
-	"solosaina maro", "solosaina",
-	"ordinateur maro", "solosaina",
+	"dont", "don't",
+	"cant", "can't",
+	"wont", "won't",
+	"recollect", "remember",
+	"recall", "remember",
+	"dreamt", "dreamed",
+	"dreams", "dream",
+	"maybe", "perhaps",
+	"certainly", "yes",
+	"machine", "computer",
+	"machines", "computer",
+	"computers", "computer",
 	"were", "was",
-	"ianao dia", "ianao",
-	"zah", "izao dia",
-	"mitovy", "sahala",
-	"tsy samihafa", "sahala",
-	"misy itovizana", "sahala"
+	"you're", "you are",
+	"i'm", "i am",
+	"same", "alike",
+	"identical", "alike",
+	"equivalent", "alike"
 ];
 
 exports.elizaPosts = [
-	"dia", "dia",
-	"anao", "ana",
-	"aho", "anao",
-	"ahy", "anao",
-	"anao", "ahy",
-	"za", "ianao",
-	"ianao", "Izaho",
-	"za", "ianao",
-	"izaho dia", "ianao dia"
+	"am", "are",
+	"your", "my",
+	"me", "you",
+	"myself", "yourself",
+	"yourself", "myself",
+	"i", "you",
+	"you", "I",
+	"my", "your",
+	"i'm", "you are"
 ];
 
 exports.elizaSynons = {
-	"be": ["dia", "dia", "dia", "dia"],
-	"belief": ["mahatsapa", "miheritreritra", "mino", "manantena"],
-	"cannot": ["tsy afaka"],
-	"desire": ["te", "mila"],
-	"everyone": ["ny olo-drehetra", "tsy misy", "nizaniza"],
-	"family": ["neny", "mama", "ray", "dada", "anabavy", "rahalahy", "vady", "zanaka", "zanako"],
-	"happy": ["faly", "ravoravo", "miramirana","mirana"],
-	"sad": ["tezitra", "tsy faly", "marary","ratsy","sorena","mamo","mamohy fo"],
-    "no": ["tsia", "tsy izany"],
-    "yes": ["izany mihintsy","marina izany","ie","ekeny","ekany"],
-    "fuck": ["masosotay","masosotra","letie","aza atao an'io fa tsy","mandreraka"]
+	"be": ["am", "is", "are", "was"],
+	"belief": ["feel", "think", "believe", "wish"],
+	"cannot": ["can't"],
+	"desire": ["want", "need"],
+	"everyone": ["everybody", "nobody", "noone"],
+	"family": ["mother", "mom", "father", "dad", "sister", "brother", "wife", "children", "child"],
+	"happy": ["elated", "glad", "better", "excited"],
+	"sad": ["unhappy", "depressed", "sick","mad","angry","pissed","depressed"],
+    "no": ["nope", "nah"],
+    "yes": ["yeah","ya","yep","yup"],
+    "fuck": ["fucker","shit","damn","shut up","bitch"]
 };
 
 exports.elizaKeywords = [
@@ -94,21 +94,21 @@ exports.elizaKeywords = [
 
 	["xnone", 0, [
 		["*", [
-			"Tsy sure zah oe azoko daholo izany.",
-			"Tohizo iany azafady...",
-			"Dia inona no ataon'izany anao?",
-			"Tena te iresaka anzan ve inao?",
+			"I'm not sure I understand you fully.",
+			"Please go on.",
+			"What does that suggest to you ?",
+			"Do you feel strongly about discussing such things ?",
 			"That is interesting.  Please continue.",
-			"Ummmh, mahafinaritra kosa izany fa tohizo iany oe.",
-			"Tsy mampaninona anao ve no miresaka an'izany?"
+			"Tell me more about that.",
+			"Does talking about this bother you ?"
 		]]
 	]],
 	["sorry", 0, [
 		["*", [
-			"Aza mialatsiny izany ianao.",
-			"Tsisy tokony ialanao tsiny.",
-			"Tsisy tsiny tompoko.",
-			"Tsy mampaninona ahy izany fa tohizo iany..."
+			"Please don't apologise.",
+			"Apologies are not necessary.",
+			"I've told you that apologies are not required.",
+			"It did not bother me.  Please continue."
 		]]
 	]],
 	["apologise", 0, [
@@ -117,275 +117,275 @@ exports.elizaKeywords = [
 		]]
 	]],
 	["remember", 5, [
-		["* tadidiko *", [
-			"Ianao ve matetika miheritreritra an (2) ?",
-			"Mety mampatsiahy anao zavatra ve ny miheritreritra an (2)?",
-			"Inona ihany koa no tadidinao?",
-			"Fa maninona ianao zao no mahatadidy an (2)?",
-			"Fa inona amin'izao zavatra mitranga zao no nampatsiahy anao an (2) ?",
-			"Fa inona kay no fifandraisanao sy i (2) ?",
-			"Inona iany koa no tadidinao amin'i (2) ?"
+		["* i remember *", [
+			"Do you often think of (2) ?",
+			"Does thinking of (2) bring anything else to mind ?",
+			"What else do you recollect ?",
+			"Why do you remember (2) just now ?",
+			"What in the present situation reminds you of (2) ?",
+			"What is the connection between me and (2) ?",
+			"What else does (2) remind you of ?"
 		]],
-		["* tadidinao ve *", [
-			"Ianao ve mino fa mety ho adinoko i (2) ?",
-			"Fa maninona ianao no miheritreritra oe tokony iantso an'i (2) zao?",
-			"Inona amin'i (2) ?",
+		["* do you remember *", [
+			"Did you think I would forget (2) ?",
+			"Why do you think I should recall (2) now ?",
+			"What about (2) ?",
 			"goto what",
-			"Dia nasinao an'i (2) ?"
+			"You mentioned (2) ?"
 		]],
-		["* tadidinao *", [
-			"Ahoana no anadinoako an'i (2) ?",
-			"Inona amin'i(2) noho tokony ho tadidiko?",
+		["* you remember *", [
+			"How could I forget (2) ?",
+			"What about (2) should I remember ?",
 			"goto you"
 		]]
 	]],
 	["forget", 5, [
-		["* adinoko *", [
-			"Hainao oe inona no adinonao (2) ?",
-			"fa maninona no tsy tadidinao (2) ?",
-			"Isakin'ny inona ianao no mahatsiaro an'i (2) ?",
-			"Makarary anao ve ny manadino izany ?",
-			"Makarary saina ve zany ?",
-			"Ianao ve tena mpanadino ?",
-			"Mino ve ianao fa ho afaka ao antsainao i (2) ?"
+		["* i forget *", [
+			"Can you think of why you might forget (2) ?",
+			"Why can't you remember (2) ?",
+			"How often do you think of (2) ?",
+			"Does it bother you to forget that ?",
+			"Could it be a mental block ?",
+			"Are you generally forgetful ?",
+			"Do you think you are suppressing (2) ?"
 		]],
-		["* nanadino *", [
-			"Maninona ianao no manontany izany ?",
-			"Tena ho resahanao amiko?",
-			"Manahirana anao ve raha adinoko tanteraka i (2) ?",
-			"Fa manino aho moa no atsiaro an'i (2) zao ?",
+		["* did you forget *", [
+			"Why do you ask ?",
+			"Are you sure you told me ?",
+			"Would it bother you if I forgot (2) ?",
+			"Why should I recall (2) just now ?",
 			"goto what",
-			"Mba lazalazao amiko oe ny mahakasika an'i (2)."
+			"Tell me more about (2)."
 		]]
 	]],
 	["if", 3, [
-		["* raha *", [
-			"Mino ve ianao fa mety ho (2) ?",
-			"Manantena ve ianao fa (2) ?",
-			"Inona no hainao mahakasika an (2) ?",
-			"Izany ve, raha (2) ?",
-			"Inona no ataonao raha (2) ?",
-			"inona ary ny chance mba (2) ?",
-			"inona no zavatra entin'izany ?"
+		["* if *", [
+			"Do you think it's likely that (2) ?",
+			"Do you wish that (2) ?",
+			"What do you know about (2) ?",
+			"Really, if (2) ?",
+			"What would you do if (2) ?",
+			"But what are the chances that (2) ?",
+			"What does this speculation lead to ?"
 		]]
 	]],
 	["dreamed", 4, [
-		["* nanofy aho *", [
-			"Izany ve, (2) ?",
-			"(2) ianao ve rehefa taitra dia mba efa nandrevo ?",
-			"(2) ianao ve mba efa nanofy?",
+		["* i dreamed *", [
+			"Really, (2) ?",
+			"Have you ever fantasized (2) while you were awake ?",
+			"Have you ever dreamed (2) before ?",
 			"goto dream"
 		]]
 	]],
 	["dream", 3, [
 		["*", [
-			"Fa inona no mba nolazain'ilay nofy taminao ?",
-			"Manofy matetika nga ianao ?",
-			"Iza no olona tao anaty nofinao ?",
-			"Mino ve ianao fa ny nofy misy ifandraisany amin'ny olanao ?"
+			"What does that dream suggest to you ?",
+			"Do you dream often ?",
+			"What persons appear in your dreams ?",
+			"Do you believe that dreams have something to do with your problem ?"
 		]]
 	]],
 	["perhaps", 0, [
 		["*", [
-			"Oatran'ny tsy mino ianao .",
-			"Fa maninona no tsy mino ianao ?",
-			"afaka mba positive ve ianao ?",
-			"Tsy mino ianao ?",
-			"Tsy fantatrao ?",
-			"firy ary ny probabilité heritreretinao ?"
+			"You don't seem quite certain.",
+			"Why the uncertain tone ?",
+			"Can't you be more positive ?",
+			"You aren't sure ?",
+			"Don't you know ?",
+			"How likely, would you estimate ?"
 		]]
 	]],
 	["name", 15, [
 		["*", [
-			"Tsy dia liana amin'ny anarana loatra aho.",
-			"Efa nolazaiko taminao oe tsy dia tia miresaka anarana aho -- Tohizo le resaka azafady."
+			"I am not interested in names.",
+			"I've told you before, I don't care about names -- please continue."
 		]]
 	]],
 	["deutsch", 0, [
 		["*", [
 			"goto xforeign",
-			"Efa noteneniko anao oe izaho tsy mahay Allemand."
+			"I told you before, I don't understand German."
 		]]
 	]],
 	["francais", 0, [
 		["*", [
 			"goto xforeign",
-			"Efa noteneniko anao oe izaho tsy mahay Français."
+			"I told you before, I don't understand French."
 		]]
 	]],
 	["italiano", 0, [
 		["*", [
 			"goto xforeign",
-			"Efa noteneniko anao oe izaho tsy mahay Italian."
+			"I told you before, I don't understand Italian."
 		]]
 	]],
 	["espanol", 0, [
 		["*", [
 			"goto xforeign",
-			"Efa noteneniko anao oe izaho tsy mahay espanol."
+			"I told you before, I don't understand Spanish."
 		]]
 	]],
 	["xforeign", 0, [
 		["*", [
-			"Malagasy ihany no aiko"
+			"I speak only English."
 		]]
 	]],
 	["hello", 0, [
 		["*", [
-			"Inona no vaovao",
-			"Manahoana."
+			"How do you do.",
+			"Hi."
 		]]
 	]],
 	["computer", 50, [
 		["*", [
-			"Matahotra ordinateur ve ianao ?",
-			"Fa maninona ianao no miresaka ordinateur ?",
-			"Ianao ve tsy mino fa ny ordinateur afaka manampy anao amin'ny olanao ?",
-			"Tsy mino ve ianao fa ny ordinateur afaka manampy olona ?",
-			"Fa inona no atahoranao ordinateur ?",
-			"Inona no eritreretinao amin'ny ordinateur ?",
-			"Ianao izao tsy mino fa izaho miresaka aminao izaho dia ordinateur ?"
+			"Do computers worry you ?",
+			"Why do you mention computers ?",
+			"What do you think machines have to do with your problem ?",
+			"Don't you think computers can help people ?",
+			"What about machines worries you ?",
+			"What do you think about machines ?",
+			"You don't think I am a computer program, do you ?"
 		]]
 	]],
 	["am", 0, [
-		["* izaho ve *", [
-			"Ianao ve mino fa ianao dia (2) ?",
-			"Ianao ve te ho (2) ?",
-			"Ianao ve mba te ho tenenina oe ianao dia (2) ?",
-			"Inona no nitranga raha ianao (2) ?",
+		["* am i *", [
+			"Do you believe you are (2) ?",
+			"Would you want to be (2) ?",
+			"Do you wish I would tell you you are (2) ?",
+			"What would it mean if you were (2) ?",
 			"goto what"
 		]],
 		["* i am *", [
 			"goto i"
 		]],
 		["*", [
-			"fa maninona ianao no miteny oe 'am' ?",
+			"Why do you say 'am' ?",
 			"I don't understand that."
 		]]
 	]],
 	["are", 0, [
-		["* ianao ve *", [
-			"Fa inona no itiavana mahalala raha (2) izaho na tsia?",
-			"Tinao ve raha mba tsy (2) izaho?",
-			"Ngamb za (2) any an'eritreritrao any",
-			"Ianao ve indraindray miheritreritra fa izaho (2) ?",
+		["* are you *", [
+			"Why are you interested in whether I am (2) or not ?",
+			"Would you prefer if I weren't (2) ?",
+			"Perhaps I am (2) in your fantasies.",
+			"Do you sometimes think I am (2) ?",
 			"goto what",
-			"Ilainao ve izany ?",
-			"Inona no nitranga raha izaho no (2) ?"
+			"Would it matter to you ?",
+			"What if I were (2) ?"
 		]],
-		["* ianao dia *", [
+		["* you are *", [
 			"goto you"
 		]],
 		["* are *", [
-			"Nino ve iano fa zareo tsy (2) ?",
-			"Tinao ve raha zareo tsy (2) ?",
-			"Dia ahoana raha zareo tsy (2) ?",
-			"Fa zareo ve (2) foana?",
-			"Possible zareo (2).",
-			"Ianao positive fa zareo (2) ?"
+			"Did you think they might not be (2) ?",
+			"Would you like it if they were not (2) ?",
+			"What if they were not (2) ?",
+			"Are they always (2) ?",
+			"Possibly they are (2).",
+			"Are you positive they are (2) ?"
 		]]
 	]],
 	["your", 0, [
-		["* anao *", [
-			"Inona no idiranao amin'ny (2)'ko ?",
-			"Dia ahoana ny (2)'nao ?",
-			"Matahotra ny (2)'ny hafa ve ianao?",
-			"Izany ve,(2)'ko ?",
-			"Inona no mahatonga anao miheritreritra ny (2)'ko ?",
-			"Mila ny (2)'ko ve ianao ?"
+		["* your *", [
+			"Why are you concerned over my (2) ?",
+			"What about your own (2) ?",
+			"Are you worried about someone else's (2) ?",
+			"Really, my (2) ?",
+			"What makes you think of my (2) ?",
+			"Do you want my (2) ?"
 		]]
 	]],
 	["was", 2, [
 		["* was i *", [
-			"Raha mba (2) ah?",
-			"Ianao ve mino fa ianao dia (2) ?",
-			"Ianao ve (2) ?",
-			"Dia ahona raha mba (2) ianao ?",
-			"Inona no etin'ny ' (2) ' anao?",
+			"What if you were (2) ?",
+			"Do you think you were (2) ?",
+			"Were you (2) ?",
+			"What would it mean if you were (2) ?",
+			"What does ' (2) ' suggest to you ?",
 			"goto what"
 		]],
 		["* i was *", [
-			"Ianao ve tena izany?",
-			"Fa maninona ianao no milaza amiko fa ianao dia (2) zao ?",
-			"Ngamba efa fantatro ianao fa (2)."
+			"Were you really ?",
+			"Why do you tell me you were (2) now ?",
+			"Perhaps I already know you were (2)."
 		]],
 		["* was you *", [
-			"Mino ve ianao fa 'zaho taloha dia (2) ?",
-			"Inona no milaza fa 'zaho taloha (2) ?",
-			"Inona no eritreretinao ?",
-			"Ngamba zaho taloha (2).",
-			"Nanahoana raha mba (2)'za taloha ?"
+			"Would you like to believe I was (2) ?",
+			"What suggests that I was (2) ?",
+			"What do you think ?",
+			"Perhaps I was (2).",
+			"What if I had been (2) ?"
 		]]
 	]],
 	["i", 0, [
 		["* i @desire *", [
-			"Midika inona aminao raha manana (3) ianao?",
-			"Fa maninoa ianao no mila (3) ?",
-			"Ndao ato oe hanana (3) ianao atsihoatsy.",
-			"Dia ahoana raha tsy manana (3) mihintsy ianao?",
-			"Midika inona aminao ny fananana (3)?",
-			"Inona moa no hidiran'ny (3) amin'ny resatsika izao ?"
+			"What would it mean to you if you got (3) ?",
+			"Why do you want (3) ?",
+			"Suppose you got (3) soon.",
+			"What if you never got (3) ?",
+			"What would getting (3) mean to you ?",
+			"What does wanting (3) have to do with this discussion ?"
 		]],
 		["* i am* @sad *", [
-			"Mialatsiny aho nohon'ny nandrenesako fa ianao dia (3).",
-			"Mino ve ianao fa ny nandehananao aty dia hamampy ana fa tsy (3) ?",
-			"Za mino fa tsy sangisangy ny (3).",
-			"Afaka azavainao ve ny nahatonga anao (3) ?"
+			"I am sorry to hear that you are (3).",
+			"Do you think coming here will help you not to be (3) ?",
+			"I'm sure it's not pleasant to be (3).",
+			"Can you explain what made you (3) ?"
 		]],
 		["* i am* @happy *", [
-			"Inona no hanampiako anao mba ho lasa  (3) ianao?",
-			"fa ny traitement anao ve maha lasa (3) ?",
-			"(3) inao teo fa naninona?",
-			"Afaka lazainao ve hoe naninona ianao tampoka teo dia (3) ?"
+			"How have I helped you to be (3) ?",
+			"Has your treatment made you (3) ?",
+			"What makes you (3) just now ?",
+			"Can you explain why you are suddenly (3) ?"
 		]],
 		["* i was *", [
 			"goto was"
 		]],
 		["* i @belief i *", [
-			"Tena mino anzany ve ianao ?",
-			"Fa ianao ary tsy mahatoly oe ianao (3).",
-			"Ianao ve tena mihahiahy (3) ?"
+			"Do you really think so ?",
+			"But you are not sure you (3).",
+			"Do you really doubt you (3) ?"
 		]],
 		["* i* @belief *you *", [
 			"goto you"
 		]],
 		["* i am *", [
-			"Marina ve fa ny hiresahanao amiko dia satria ianao (2) ?",
-			"Hafirina izay ianao no (2) ?",
-			"Mino ve iano fa normal zany lasa (2) zany?",
-			"Enao ve mba te ho lasa (2) ?",
-			"Mafantantra olon-kafa (2) ve ianao?"
+			"Is it because you are (2) that you came to me ?",
+			"How long have you been (2) ?",
+			"Do you believe it is normal to be (2) ?",
+			"Do you enjoy being (2) ?",
+			"Do you know anyone else who is (2) ?"
 		]],
 		["* i @cannot *", [
-			"Hainao ve fa ianao dia tsy afaka (3) ?",
-			"Mataotra nga ianao ?",
-			"Ngamba tokony (3) ianao zao.",
-			"Mino ve ianao fa tena afaka (3) ?",
-			"Dia ahoana raha afaka (3) iano?"
+			"How do you know that you can't (3) ?",
+			"Have you tried ?",
+			"Perhaps you could (3) now.",
+			"Do you really want to be able to (3) ?",
+			"What if you could (3) ?"
 		]],
 		["* i don't *", [
-			"Ianao ve tena tsy (2) ?",
-			"Fa maninona ianao tsy mba (2) ?",
-			"Ianao ve mantena mba  (2) ?",
-			"Manankorotana anao ve izany ?"
+			"Don't you really (2) ?",
+			"Why don't you (2) ?",
+			"Do you wish to be able to (2) ?",
+			"Does that trouble you ?"
 		]],
 		["* i feel *", [
-			"Mba hilazalazao sentiments oe izaho",
-			"Ianao ve matetika mahatsapa (2) ?",
-			"Tia mahatsapa zavatra (2) ve ianao?",
-			"inona no tsampanao amin'izany (2) izany ?"
+			"Tell me more about such feelings.",
+			"Do you often feel (2) ?",
+			"Do you enjoy feeling (2) ?",
+			"Of what does feeling (2) remind you ?"
 		]],
 		["* i * you *", [
-			"Ngamba ianao mandrevo oe tsika miaraka (2)",
-			"Tianao ve ny (2) ahy ?",
-			"Ianao mila  (2) ahy.",
-			"Ianao ve (2) olona hafa ?"
+			"Perhaps in your fantasies we (2) each other.",
+			"Do you wish to (2) me ?",
+			"You seem to need to (2) me.",
+			"Do you (2) anyone else ?"
 		]],
 		["*", [
-			"Hoy ianao oe (1) ?",
-			"Mba afaka velabelarinao kely ve zany ?",
-			"Hoy ianao oe (1) nohon'ny antony manokana ?",
-			"Tena tsara izany."
+			"You say (1) ?",
+			"Can you elaborate on that ?",
+			"Do you say (1) for some special reason ?",
+			"That's quite interesting."
 		]]
 	]],
 	["you", 0, [
