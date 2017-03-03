@@ -1,28 +1,33 @@
 {
   "name": "fb-messenger-bot",
-  "version": "1.0.0",
-  "description": "Demo for Facebook Messenger and Appboy",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Node.js application that serves webhook for Facebook Messenger API",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "author": "Jussi Lundstedt",
-  "license": "ISC",
-  "dependencies": {
-    "basic-auth": "*",
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "request": "^2.72.0",
-    "socket.io": "^1.4.6",
-    "uuid": "^2.0.2"
-  },
-  "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Appboy/appboy-fb-messenger-bot.git"
+    "url": "git+https://github.com/arcanous/fb-messenger-bot.git"
   },
+  "keywords": [
+    "fb messenger",
+    "facebook",
+    "messenger",
+    "bot"
+  ],
+  "author": "harijs.deksnis@gmail.com",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Appboy/appboy-fb-messenger-bot/issues"
+    "url": "https://github.com/arcanous/fb-messenger-bot/issues"
   },
-  "homepage": "https://github.com/Appboy/appboy-fb-messenger-bot#readme"
+  "homepage": "https://github.com/arcanous/fb-messenger-bot#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "glob": "^7.0.3",
+    "request": "^2.72.0",
+    "underscore": "^1.8.3",
+    "weather-js": "^1.0.2"
+  }
 }
