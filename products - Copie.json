@@ -1,0 +1,37 @@
+{
+    "missdressing_products": [
+        {
+            "product_id":0,
+            "externalID":"attitude-giorgio-armani-we4j0x",
+            "category":"parfum",
+            "title":"APPTITUD GIORGIO ARMANI",
+            "price":157000,
+            "image_url":"http://www.madawin.mg/image/product/1nl27xdytkzi?size=254"
+        },
+        {
+            "product_id":1,
+			"externalID":"vanita-xe71pq",
+            "category":"parfum",
+            "title":"VANITA",
+            "price":177000,
+            "image_url":"http://www.madawin.mg/image/product/wrvh692eto6o?size=254"
+        },
+		{
+            "product_id":2,
+			"externalID":"mocassin-blanc-casse-phtwwa",
+            "category":"chaussures",
+            "title":"MOCASSIN BLANC CASSE",
+            "price":177000,
+            "image_url":"http://www.madawin.mg/image/product/ggyhwxegl0fz?size=254"
+        },
+		{
+            "product_id":3,
+			"externalID":"ballerine-matiere-croco-a5q0ey",
+            "category":"parfum",
+            "title":"BALERINE MATIERE CROCO",
+            "price":177000,
+            "image_url":"http://www.madawin.mg/image/product/olclo3bfsr0y?size=254"
+        }
+		
+    ]
+}

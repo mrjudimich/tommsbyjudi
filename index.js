@@ -68,6 +68,7 @@ app.get('/webhook/', function (req, res) {
 });
 
 var products = require('./menu.json'); // product data stored on the server
+var products = require('./products.json'); // product data stored on the server
 
 // handle a URI encoded JSON request as a GET
 app.get('/api/products', function (req, res) {
@@ -260,75 +261,7 @@ function sendAppboyMessage(sender) {
             "type": "template",
             "payload": {
                 "template_type": "generic",
-				"intro_message": "Here\'s a sample flight itinerary. We're not really in the airline business though. Not yet, anyway.",
-				"locale": "en_US",
-				"theme_color":"#1C222B",
-                "elements": [{
-                    "title": "Appboy",
-                    "subtitle": "Premier Marketing Automation for Apps",
-                    "image_url": myURL + "/appboy_logo.png",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.appboy.com",
-                        "title": "Learn more"
-                    }]
-                },
-				{
-                    "title": "Appboy",
-                    "subtitle": "Second",
-                    "image_url": myURL + "/appboy_logo.png",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.appboy.com",
-                        "title": "Learn more again"
-                    }]
-                }
-				,
-				{
-                    "title": "Appboy",
-                    "subtitle": "Second",
-                    "image_url": myURL + "/appboy_logo.png",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.appboy.com",
-                        "title": "Learn more again"
-                    }]
-                }
-				,
-				{
-                    "title": "Appboy",
-                    "subtitle": "Second",
-                    "image_url": myURL + "/appboy_logo.png",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.appboy.com",
-                        "title": "Learn more again"
-                    }]
-                }
-				,
-				{
-                    "title": "Appboy",
-                    "subtitle": "Second",
-                    "image_url": myURL + "/appboy_logo.png",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.appboy.com",
-                        "title": "Learn more again"
-                    }]
-                }
-				,
-				{
-                    "title": "Appboy",
-                    "subtitle": "Second",
-                    "image_url": myURL + "/appboy_logo.png",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.appboy.com",
-                        "title": "Learn more again"
-                    }]
-                }
-				
-				]
+                "elements": missdressing_products
             }
         }
     };
