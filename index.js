@@ -177,7 +177,37 @@ app.post('/webhook/', function (req, res) {
                 sendAirlineTemplate(sender);
                 continue
             }
-            sendTextMessage(sender, "Vous avez ecrit :" + text.substring(0, 200)+". Malheureuseument ceci n'est pas dans la base de données" )
+            sendTextMessage(sender, "Vous avez ecrit :" + text.substring(0, 200)+". Malheureusement ceci n'est pas dans la base de données" );
+            sendTextMessage(sender, "Parmi nos nombreux produits, vous pouvez choisir selon les catégories suivantes :" );
+			var messageData = {
+				"attachment":{
+					"type":fileType,
+					"payload":{
+						"url": url
+					}
+				},
+			
+				"quick_replies":[
+					{
+						"content_type":"text",
+						"title":"Chaussures! \uD83D\uDC4D",
+						"payload":"CHAUSSURES"
+					},
+					{
+						"content_type":"text",
+						"title":"Parfums! \u2764\ufe0f",
+						"payload":"PARFUMS"
+					},
+					{
+						"content_type":"text",
+						"title":"Habillement \ud83d\ude34",
+						"payload":"HABILLEMENT"
+					}
+				]
+			}
+
+			// send the message
+			sendMessage(sender, messageData);
             if (event.postback) {
                 text = JSON.stringify(event.postback)
                 sendTextMessage(sender, "Postback received:" + text.substring(0, 200))
@@ -187,7 +217,7 @@ app.post('/webhook/', function (req, res) {
         else if (event.optin) {
             var dataRef = event.optin.ref;
             io.to(dataRef).emit('fb_messenger_auth', { 'messenger_id' : sender });
-            sendTextMessage(sender, "Merci de vous être inscrit. Nous allons bientôt donner suite a votre commande!");
+            sendTextMessage(sender, "Merci de votre inscription. Nous allons bientôt donner suite à votre commande!");
         }
     }
     res.sendStatus(200);
