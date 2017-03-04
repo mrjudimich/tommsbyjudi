@@ -138,19 +138,19 @@ app.post('/webhook/', function (req, res) {
                 sendTextMessage(sender, "Mandehana mody aloha e!");
                 continue
 			} else if (upperCasedText.includes('produits')) {
-                sendProduits(sender)
+                sendProduits(sender);
                 continue
             }
 			} else if (upperCasedText.includes('chaussures')) {
-                sendChaussures(sender)
+                sendChaussures(sender);
                 continue
             }
 			} else if (upperCasedText.includes('parfums')) {
-                sendParfums(sender)
+                sendParfums(sender);
                 continue
             }
 			} else if (upperCasedText.includes('habillement')) {
-                sendHabillement(sender)
+                sendHabillement(sender);
                 continue
             }
 			else if (upperCasedText.includes('MARKETING')) {
