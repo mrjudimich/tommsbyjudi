@@ -140,7 +140,17 @@ app.post('/webhook/', function (req, res) {
 			} else if (upperCasedText.includes('WHO BUILT THIS')) {
                 sendAppboyMessage(sender)
                 continue
-            } else if (upperCasedText.includes('MARKETING')) {
+            }else if (upperCasedText.includes('CHAUSSURES')) {
+                sendAppboyMessage(sender)
+                continue
+            }else if (upperCasedText.includes('PARFUMS')) {
+                sendAppboyMessage(sender)
+                continue
+            }else if (upperCasedText.includes('HABILLEMENT')) {
+                sendAppboyMessage(sender)
+                continue
+            }
+			else if (upperCasedText.includes('MARKETING')) {
                 sendTextMessage(sender, "Check out our multichannel matrix white paper! \ud83d\udcc8");
                 sendFileMessage(sender, "http://info.appboy.com/rs/appboy/images/Multi_Channel_Matrix.pdf", 'file');
                 continue
