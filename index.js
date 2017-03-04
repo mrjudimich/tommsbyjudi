@@ -39,13 +39,6 @@ app.post('/webhook', function (req, res) {
             var reply = eliza.transform(event.message.text);
             sendMessage(event.sender.id, {text: reply});
 			
-			var text = event.message.text;
-            var upperCasedText = text.toUpperCase();
-			
-            if (upperCasedText.includes('HI')) {
-                sendMessage(event.sender.id,"Tsy misy sary");
-                continue;
-			}
 			sendMessage(event.sender.id,"Misy sary");
              
         } 
