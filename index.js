@@ -37,11 +37,9 @@ app.post('/webhook', function (req, res) {
         if (event.message && event.message.text) {
             // get reply from eliza 
             var reply = eliza.transform(event.message.text);
+
             sendMessage(event.sender.id, {text: reply});
-			
-			var valiny="Merci judi";
-			sendMessage(event.sender.id,{text: valiny});
-             
+    
         } 
     }
     res.sendStatus(200);
@@ -68,11 +66,3 @@ function sendMessage(recipientId, message) {
         }
     });
 };
-
-function sendTextMessage(sender, text) {
-    var messageData = {
-        text:text
-    };
-	/ send the message
-    sendMessage(sender, messageData);
-}
