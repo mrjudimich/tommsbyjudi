@@ -56,6 +56,36 @@
 						"title": "Commander"
                     }]
         }
+		,
+		{
+            "title":"Top jaune manches courtes : 56 000Ar",
+			"subtitle":"habillement",
+            "image_url":"http://www.madawin.mg/image/product/5f9pbnzs1fy6?size=254",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.lezomadetana.mg/company/missdressing/product/top-jaune-manches-courtes-jupe-imprimee-attitude-ixdpz6",
+						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
+                    }]
+        }
+		,
+		{
+            "title":"Robe asymétrique: 50 000Ar",
+			"subtitle":"habillement",
+            "image_url":"http://www.madawin.mg/image/product/8rpte06vzesk?size=254",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.lezomadetana.mg/company/missdressing/product/robe-asymetrique--t03piw",
+						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
+                    }]
+        }
 		
     ],
 	"chaussures": [
