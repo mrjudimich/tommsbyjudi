@@ -141,13 +141,13 @@ app.post('/webhook/', function (req, res) {
                 sendAppboyMessage(sender)
                 continue
             }else if (upperCasedText.includes('CHAUSSURES')) {
-                sendAppboyMessage(sender)
+                sendChaussures(sender)
                 continue
             }else if (upperCasedText.includes('PARFUMS')) {
-                sendAppboyMessage(sender)
+                sendParfums(sender)
                 continue
             }else if (upperCasedText.includes('HABILLEMENT')) {
-                sendAppboyMessage(sender)
+                sendHabillement(sender)
                 continue
             }
 			else if (upperCasedText.includes('MARKETING')) {
@@ -317,7 +317,7 @@ function sendHabillement(sender) {
             "payload": {
                 "template_type": "generic",
 				
-                "elements": missdressing_products.missdressing_products
+                "elements": missdressing_products.habillement
             }
         }
     };
