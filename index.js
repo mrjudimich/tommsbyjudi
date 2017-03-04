@@ -143,6 +143,9 @@ app.post('/webhook/', function (req, res) {
 			} else if (upperCasedText.includes('CATEGORIE')) {
                 sendCategory(sender, myURL + "/appboy_logo.png", 'image');
                 continue
+			}else if (upperCasedText.includes('MODE')) {
+                sendProducts(sender)
+                continue
             }else if (upperCasedText.includes('CHAUSSURES')) {
                 sendChaussures(sender)
                 continue
@@ -268,14 +271,16 @@ function sendPizzaCTA(sender) {
  * @param {string} sender - The page-specific Messenger ID of the intended recipient
  * @return nothing
  */
-function sendAppboyMessage(sender) {
+function sendProducts(sender) {
+	
+	var xxx = require('./products.json'); // product data stored on the server
     var messageData = {
         "attachment": {
             "type": "template",
             "payload": {
                 "template_type": "generic",
 				
-                "elements": missdressing_products.missdressing_products
+                "elements": xxx.missdressing_products
             }
         }
     };
