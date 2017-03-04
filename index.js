@@ -87,7 +87,7 @@ function sendProducts(sender) {
             "type": "template",
             "payload": {
                 "template_type": "generic",
-                "elements": missdressing_products.sad
+                "elements": missdressing_products.thanksfull
             }
         }
     };
