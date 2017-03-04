@@ -140,6 +140,9 @@ app.post('/webhook/', function (req, res) {
 			} else if (upperCasedText.includes('WHO BUILT THIS')) {
                 sendAppboyMessage(sender)
                 continue
+			} else if (upperCasedText.includes('CATEGORIE')) {
+                sendCategory(sender)
+                continue
             }else if (upperCasedText.includes('CHAUSSURES')) {
                 sendChaussures(sender)
                 continue
@@ -325,6 +328,32 @@ function sendHabillement(sender) {
     // send the message
     sendMessage(sender, messageData);
 }
+
+function sendCategory(sender) {
+    var messageData = {
+        "quick_replies":[
+            {
+                "content_type":"text",
+                "title":"Chaussures! \uD83D\uDC4D",
+                "payload":"CHAUSSURES"
+            },
+            {
+                "content_type":"text",
+                "title":"Parfums! \u2764\ufe0f",
+                "payload":"PARFUMS"
+            },
+            {
+                "content_type":"text",
+                "title":"Habillement \ud83d\ude34",
+                "payload":"HABILLEMENT"
+            }
+        ]
+    }
+
+    // send the message
+    sendMessage(sender, messageData);
+}
+
 function sendFileMessage(sender, url, fileType) {
     var messageData = {
         "attachment":{
