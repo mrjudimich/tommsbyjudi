@@ -41,6 +41,7 @@ app.post('/webhook', function (req, res) {
 			
 			var text = event.message.text;
             var upperCasedText = text.toUpperCase();
+			
             if (upperCasedText.includes('HI')) {
                 sendMessage(event.sender.id,"Tsy misy sary");
                 continue;
