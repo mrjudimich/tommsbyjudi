@@ -179,35 +179,8 @@ app.post('/webhook/', function (req, res) {
             }
             sendTextMessage(sender, "Vous avez ecrit :" + text.substring(0, 200)+". Malheureusement ceci n'est pas dans la base de données" );
             sendTextMessage(sender, "Parmi nos nombreux produits, vous pouvez choisir selon les catégories suivantes :" );
-			var messageData = {
-				"attachment":{
-					"type":fileType,
-					"payload":{
-						"url": url
-					}
-				},
+			sendCategory(sender, myURL + "/appboy_logo.png", 'image');
 			
-				"quick_replies":[
-					{
-						"content_type":"text",
-						"title":"Chaussures! \uD83D\uDC4D",
-						"payload":"CHAUSSURES"
-					},
-					{
-						"content_type":"text",
-						"title":"Parfums! \u2764\ufe0f",
-						"payload":"PARFUMS"
-					},
-					{
-						"content_type":"text",
-						"title":"Habillement \ud83d\ude34",
-						"payload":"HABILLEMENT"
-					}
-				]
-			}
-
-			// send the message
-			sendMessage(sender, messageData);
             if (event.postback) {
                 text = JSON.stringify(event.postback)
                 sendTextMessage(sender, "Postback received:" + text.substring(0, 200))
