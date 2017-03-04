@@ -88,10 +88,10 @@
         }
 		
     ],
-	"chaussures": [
+	"thankyou": [
 		{
-            "title":"MOCASSIN BLANC CASSE",
-			"subtitle":"chaussures",
+            "title":"Thank you for you visit",
+			"subtitle":"Thanksfull",
             "image_url":"http://www.madawin.mg/image/product/ggyhwxegl0fz?size=254",
 			"buttons": [{
                         "type": "web_url",
@@ -102,27 +102,12 @@
                         "url":"https://mighty-scrubland-34638.herokuapp.com/",
 						"title": "Commander"
                     }]
-        },
-		{
-            "title":"BALERINE MATIERE CROCO",
-			"subtitle":"chaussures",
-            "image_url":"http://www.madawin.mg/image/product/olclo3bfsr0y?size=254",
-			"buttons": [{
-                        "type": "web_url",
-                        "url":"http://www.madawin.mg/company/missdressing/product/ballerine-matiere-croco-a5q0ey",
-						"title": "voir"
-                    },{
-                        "type": "web_url",
-                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
-						"title": "Commander"
-                    }]
         }
-		
     ],
-	"parfums": [
+	"sad": [
         {
-            "title":"ATTITUDE GIORGIO ARMANI",
-			"subtitle":"parfum",
+            "title":"MAY BE THIS PICTURE MAKE YOU HAPPY",
+			"subtitle":"Be Happy",
             "image_url":"http://www.madawin.mg/image/product/1nl27xdytkzi?size=254",
 			"buttons": [{
                         "type": "web_url",
@@ -135,8 +120,8 @@
                     }]
         },
         {
-            "title":"VANITAS",
-			"subtitle":"parfum",
+            "title":"AND THIS",
+			"subtitle":"Be Happy",
             "image_url":"http://www.madawin.mg/image/product/wrvh692eto6o?size=254",
 			"buttons": [{
                         "type": "web_url",
@@ -149,10 +134,10 @@
                     }]
         }
     ],
-	"habillement": [
+	"sick": [
 		{
-            "title":"Top jaune manches courtes : 56 000Ar",
-			"subtitle":"habillement",
+            "title":"IF I WERE YOU I GO TO THE DOCTOR",
+			"subtitle":"Go to the Doctor",
             "image_url":"http://www.madawin.mg/image/product/5f9pbnzs1fy6?size=254",
 			"buttons": [{
                         "type": "web_url",
@@ -166,8 +151,8 @@
         }
 		,
 		{
-            "title":"Robe asymétrique: 50 000Ar",
-			"subtitle":"habillement",
+            "title":"IF I WERE YOU I GO TO THE DOCTOR",
+			"subtitle":"Go to the Doctor",
             "image_url":"http://www.madawin.mg/image/product/8rpte06vzesk?size=254",
 			"buttons": [{
                         "type": "web_url",
