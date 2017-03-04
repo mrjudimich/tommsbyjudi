@@ -177,7 +177,7 @@ app.post('/webhook/', function (req, res) {
                 sendAirlineTemplate(sender);
                 continue
             }
-            sendTextMessage(sender, "Unfortunately I couldn't quite figure out what you were saying, but here's a part of it: " + text.substring(0, 200))
+            sendTextMessage(sender, "Vous avez ecrit :" + text.substring(0, 200)+". Malheureuseument ceci n'est pas dans la base de données" )
             if (event.postback) {
                 text = JSON.stringify(event.postback)
                 sendTextMessage(sender, "Postback received:" + text.substring(0, 200))
@@ -187,7 +187,7 @@ app.post('/webhook/', function (req, res) {
         else if (event.optin) {
             var dataRef = event.optin.ref;
             io.to(dataRef).emit('fb_messenger_auth', { 'messenger_id' : sender });
-            sendTextMessage(sender, "Thanks for subscribing to MyZa updates. You're now eligible to receive messages about your future imaginary pizza orders. Happy demoing!");
+            sendTextMessage(sender, "Merci de vous être inscrit. Nous allons bientôt donner suite a votre commande!");
         }
     }
     res.sendStatus(200);
