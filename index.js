@@ -141,7 +141,7 @@ app.post('/webhook/', function (req, res) {
                 sendAppboyMessage(sender)
                 continue
 			} else if (upperCasedText.includes('CATEGORIE')) {
-                sendCategory(sender)
+                sendCategory(sender, myURL + "/appboy_logo.png", 'image');
                 continue
             }else if (upperCasedText.includes('CHAUSSURES')) {
                 sendChaussures(sender)
@@ -329,8 +329,15 @@ function sendHabillement(sender) {
     sendMessage(sender, messageData);
 }
 
-function sendCategory(sender) {
+function sendCategory(sender, url, fileType) {
     var messageData = {
+		"attachment":{
+            "type":fileType,
+            "payload":{
+                "url": url
+            }
+        },
+    
         "quick_replies":[
             {
                 "content_type":"text",
