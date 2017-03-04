@@ -37,9 +37,16 @@ app.post('/webhook', function (req, res) {
         if (event.message && event.message.text) {
             // get reply from eliza 
             var reply = eliza.transform(event.message.text);
-
             sendMessage(event.sender.id, {text: reply});
-    
+			
+			var text = event.message.text;
+            var upperCasedText = text.toUpperCase();
+            if (upperCasedText.includes('HI')) {
+                sendTextMessage(event.sender.id, "Ity misy sary" );
+                continue;
+			}
+			sendTextMessage(event.sender.id, "Tsy misy sary");
+             
         } 
     }
     res.sendStatus(200);
