@@ -129,7 +129,7 @@ app.post('/webhook/', function (req, res) {
                 sendPizzaCTA(sender);
                 continue;
 			} else if (upperCasedText.includes('VAOVAO')) {
-                sendTextMessage(sender, "Mbola tsy misy vaovao aloha atreto");
+                sendTextMessage(sender, "Mbola tsy misy vaovao aloha atreto. Inona no azo atao anao: Mode, chaussures ou parfums.");
                 continue
 			} else if (upperCasedText.includes('BONJOUR')) {
                 sendTextMessage(sender, "Bonjour que puis-je faire pour faire? Mode, chaussures ou parfums.");
@@ -143,7 +143,7 @@ app.post('/webhook/', function (req, res) {
 			} else if (upperCasedText.includes('WHO BUILT THIS')) {
                 sendAppboyMessage(sender)
                 continue
-			} else if (upperCasedText.includes('CATEGORIE')) {
+			} else if (upperCasedText.includes('PROPOSITION')) {
                 sendCategory(sender, myURL + "/appboy_logo.png", 'image');
                 continue
 			}else if (upperCasedText.includes('MODE')) {
