@@ -42,7 +42,7 @@ app.post('/webhook', function (req, res) {
 			var text2 = event.message.text;
             var upperCasedText = text2.toUpperCase();
 			
-            if (upperCasedText.includes('HELLO')) {
+            if (upperCasedText.includes('SAD')) {
 					var valiny="you say HELLO";
 					sendProducts(event.sender.id)
 			} else if (upperCasedText.includes('SICK')) {
@@ -87,7 +87,7 @@ function sendProducts(sender) {
             "type": "template",
             "payload": {
                 "template_type": "generic",
-                "elements": missdressing_products.thanksfull
+                "elements": missdressing_products.sad
             }
         }
     };
@@ -118,7 +118,7 @@ function sendChaussures(sender) {
             "type": "template",
             "payload": {
                 "template_type": "generic",
-                "elements": missdressing_products.happy
+                "elements": missdressing_products.sick
             }
         }
     };
