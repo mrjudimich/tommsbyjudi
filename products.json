@@ -8,11 +8,10 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/attitude-giorgio-armani-we4j0x",
 						"title": "voir"
-                    },
-					{
+                    },{
                         "type": "web_url",
-                        "url": myURL
-						"title": "Commander"
+                        "url":"http://www.madawin.mg/company/missdressing/product/attitude-giorgio-armani-we4j0x",
+						"title": "commander"
                     }]
         },
         {
@@ -23,11 +22,6 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/vanita-xe71pq",
 						"title": "voir"
-                    },
-					{
-                        "type": "web_url",
-                        "url": myURL
-						"title": "Commander"
                     }]
         },
 		{
@@ -38,11 +32,6 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/mocassin-blanc-casse-phtwwa",
 						"title": "voir"
-                    },
-					{
-                        "type": "web_url",
-                        "url": myURL
-						"title": "Commander"
                     }]
         },
 		{
