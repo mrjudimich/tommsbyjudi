@@ -258,7 +258,7 @@ function sendAppboyMessage(sender) {
     var messageData = {
         "attachment": {
             "type": "template",
-			"intro_message": "Peut être les produits suivant vous interesse",
+			"title": "Peut être les produits suivants vous interesse",
             "payload": {
                 "template_type": "generic",
                 "elements": [{
