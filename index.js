@@ -13,6 +13,8 @@ app.listen((process.env.PORT || 3000), function () {
   console.log('app listening on port 3000');
 });
 
+var missdressing_products = require('./products.json'); // product data stored on the server
+
 
 // Server frontpage
 app.get('/', function (req, res) {
@@ -42,10 +44,10 @@ app.post('/webhook', function (req, res) {
 			
             if (upperCasedText.includes('HELLO')) {
 					var valiny="you say HELLO";
-					sendMessage(event.sender.id,{text: valiny});
+					sendProducts(sender)
 			} else if (upperCasedText.includes('SICK')) {
 					var valiny="you say SICK";
-					sendMessage(event.sender.id,{text: valiny});
+					sendChaussures(sender)
 			} 
 			
             var reply = eliza.transform(event.message.text);
@@ -77,3 +79,36 @@ function sendMessage(recipientId, message) {
         }
     });
 };
+
+
+
+function sendProducts(sender) {
+	
+	var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": missdressing_products.missdressing_products
+            }
+        }
+    };
+
+    // send the message
+    sendMessage(sender, messageData);
+}
+
+function sendChaussures(sender) {
+    var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": missdressing_products.chaussures
+            }
+        }
+    };
+
+    // send the message
+    sendMessage(sender, messageData);
+}
