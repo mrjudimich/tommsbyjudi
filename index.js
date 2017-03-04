@@ -319,6 +319,7 @@ function sendParfums(sender) {
     // send the message
     sendMessage(sender, messageData);
 }
+
 function sendHabillement(sender) {
     var messageData = {
         "attachment": {
@@ -334,6 +335,7 @@ function sendHabillement(sender) {
     // send the message
     sendMessage(sender, messageData);
 }
+
 
 function sendCategory(sender, url, fileType) {
     var messageData = {
