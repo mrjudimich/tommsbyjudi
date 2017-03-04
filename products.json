@@ -11,7 +11,7 @@
                     },{
                         "type": "web_url",
                         "url":"https://mighty-scrubland-34638.herokuapp.com/",
-						"title": ""
+						"title": "Commander"
                     }]
         },
         {
@@ -25,7 +25,7 @@
                     },{
                         "type": "web_url",
                         "url":"https://mighty-scrubland-34638.herokuapp.com/",
-						"title": ""
+						"title": "Commander"
                     }]
         },
 		{
@@ -39,7 +39,7 @@
                     },{
                         "type": "web_url",
                         "url":"https://mighty-scrubland-34638.herokuapp.com/",
-						"title": ""
+						"title": "Commander"
                     }]
         },
 		{
@@ -53,7 +53,7 @@
                     },{
                         "type": "web_url",
                         "url":"https://mighty-scrubland-34638.herokuapp.com/",
-						"title": ""
+						"title": "Commander"
                     }]
         }
 		,
@@ -68,7 +68,7 @@
                     },{
                         "type": "web_url",
                         "url":"https://mighty-scrubland-34638.herokuapp.com/",
-						"title": ""
+						"title": "Commander"
                     }]
         }
 		,
@@ -83,7 +83,7 @@
                     },{
                         "type": "web_url",
                         "url":"https://mighty-scrubland-34638.herokuapp.com/",
-						"title": ""
+						"title": "Commander"
                     }]
         }
 		
@@ -100,7 +100,7 @@
                     },{
                         "type": "web_url",
                         "url":"https://mighty-scrubland-34638.herokuapp.com/",
-						"title": ""
+						"title": "Commander"
                     }]
         }
     ],
@@ -108,7 +108,7 @@
         {
             "title":"MAY BE THIS PICTURE MAKE YOU HAPPY",
 			"subtitle":"Be Happy",
-            "image_url":"http://madawin.mg/image/company/f04jey9p52mg",
+            "image_url":"http://www.madawin.mg/image/product/1nl27xdytkzi?size=254",
 			"buttons": [{
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/attitude-giorgio-armani-we4j0x",
@@ -116,13 +116,13 @@
                     },{
                         "type": "web_url",
                         "url":"https://mighty-scrubland-34638.herokuapp.com/",
-						"title": ""
+						"title": "Commander"
                     }]
         },
         {
             "title":"AND THIS",
 			"subtitle":"Be Happy",
-            "image_url":"http://madawin.mg/image/company/f04jey9p52mg",
+            "image_url":"http://www.madawin.mg/image/product/wrvh692eto6o?size=254",
 			"buttons": [{
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/vanita-xe71pq",
@@ -130,15 +130,15 @@
                     },{
                         "type": "web_url",
                         "url":"https://mighty-scrubland-34638.herokuapp.com/",
-						"title": ""
+						"title": "Commander"
                     }]
         }
     ],
 	"sick": [
 		{
-            "title":"IF I WERE YOU I WILL GO TO THE DOCTOR",
+            "title":"IF I WERE YOU I GO TO THE DOCTOR",
 			"subtitle":"Go to the Doctor",
-            "image_url":"http://madawin.mg/image/company/xa5ijzfajtl9",
+            "image_url":"http://www.madawin.mg/image/product/5f9pbnzs1fy6?size=254",
 			"buttons": [{
                         "type": "web_url",
                         "url":"http://www.lezomadetana.mg/company/missdressing/product/top-jaune-manches-courtes-jupe-imprimee-attitude-ixdpz6",
@@ -146,14 +146,14 @@
                     },{
                         "type": "web_url",
                         "url":"https://mighty-scrubland-34638.herokuapp.com/",
-						"title": ""
+						"title": "Commander"
                     }]
         }
 		,
 		{
-            "title":"IF I WERE YOU I WILL GO TO THE DOCTOR",
+            "title":"IF I WERE YOU I GO TO THE DOCTOR",
 			"subtitle":"Go to the Doctor",
-            "image_url":"http://madawin.mg/image/company/xa5ijzfajtl9",
+            "image_url":"http://www.madawin.mg/image/product/8rpte06vzesk?size=254",
 			"buttons": [{
                         "type": "web_url",
                         "url":"http://www.lezomadetana.mg/company/missdressing/product/robe-asymetrique--t03piw",
@@ -161,7 +161,7 @@
                     },{
                         "type": "web_url",
                         "url":"https://mighty-scrubland-34638.herokuapp.com/",
-						"title": ""
+						"title": "Commander"
                     }]
         }
 		
