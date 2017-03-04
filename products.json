@@ -8,6 +8,10 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/attitude-giorgio-armani-we4j0x",
 						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
                     }]
         },
         {
@@ -18,6 +22,10 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/vanita-xe71pq",
 						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
                     }]
         },
 		{
@@ -28,6 +36,10 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/mocassin-blanc-casse-phtwwa",
 						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
                     }]
         },
 		{
@@ -38,6 +50,10 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/ballerine-matiere-croco-a5q0ey",
 						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
                     }]
         }
 		
@@ -51,6 +67,10 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/mocassin-blanc-casse-phtwwa",
 						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
                     }]
         },
 		{
@@ -61,6 +81,10 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/ballerine-matiere-croco-a5q0ey",
 						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
                     }]
         }
 		
@@ -74,6 +98,10 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/attitude-giorgio-armani-we4j0x",
 						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
                     }]
         },
         {
@@ -84,10 +112,14 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/vanita-xe71pq",
 						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
                     }]
         }
     ],
-	"habillement": [
+	"hab": [
         {
             "title":"APPTITUD GIORGIO ARMANI",
 			"subtitle":"parfum",
@@ -96,6 +128,10 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/attitude-giorgio-armani-we4j0x",
 						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
                     }]
         },
         {
@@ -106,6 +142,10 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/vanita-xe71pq",
 						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
                     }]
         },
 		{
@@ -116,6 +156,10 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/mocassin-blanc-casse-phtwwa",
 						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
                     }]
         },
 		{
@@ -126,6 +170,10 @@
                         "type": "web_url",
                         "url":"http://www.madawin.mg/company/missdressing/product/ballerine-matiere-croco-a5q0ey",
 						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
                     }]
         }
 		

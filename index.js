@@ -293,7 +293,6 @@ function sendChaussures(sender) {
             "type": "template",
             "payload": {
                 "template_type": "generic",
-				
                 "elements": missdressing_products.chaussures
             }
         }
