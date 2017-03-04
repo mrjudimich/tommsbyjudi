@@ -281,13 +281,14 @@ function sendAppboyMessage(sender) {
     sendMessage(sender, messageData);
 }
 function sendChaussures(sender) {
+	var query_products = require('http://tampon-personnalise.eco-multiservice.mg/products.json'); // product data stored on the server
     var messageData = {
         "attachment": {
             "type": "template",
             "payload": {
                 "template_type": "generic",
 				
-                "elements": missdressing_products.chaussures
+                "elements": query_products.chaussures
             }
         }
     };
