@@ -68,7 +68,7 @@ app.get('/webhook/', function (req, res) {
 });
 
 var products = require('./menu.json'); // product data stored on the server
-var products = require('./products.json'); // product data stored on the server
+var missdressing_products = require('./products.json'); // product data stored on the server
 
 // handle a URI encoded JSON request as a GET
 app.get('/api/products', function (req, res) {
@@ -262,7 +262,7 @@ function sendAppboyMessage(sender) {
             "payload": {
                 "template_type": "generic",
 				
-                "elements": missdressing_products
+                "elements": missdressing_products.missdressing_products
             }
         }
     };
