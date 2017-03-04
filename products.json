@@ -93,6 +93,15 @@
             "title":"Thank you for you visit",
 			"subtitle":"Thanksfull",
             "image_url":"http://madawin.mg/image/company/gh8qfyr8gtdj",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/mocassin-blanc-casse-phtwwa",
+						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
+                    }]
 			
         }
     ],
@@ -101,12 +110,30 @@
             "title":"MAY BE THIS PICTURE MAKE YOU HAPPY",
 			"subtitle":"Be Happy",
             "image_url":"http://madawin.mg/image/company/f04jey9p52mg",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/mocassin-blanc-casse-phtwwa",
+						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
+                    }]
 			
         },
         {
             "title":"AND THIS",
 			"subtitle":"Be Happy",
             "image_url":"http://madawin.mg/image/company/f04jey9p52mg",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/mocassin-blanc-casse-phtwwa",
+						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
+                    }]
 			
         }
     ],
@@ -115,6 +142,15 @@
             "title":"IF I WERE YOU I GO TO THE DOCTOR",
 			"subtitle":"Go to the Doctor",
             "image_url":"http://madawin.mg/image/company/xa5ijzfajtl9",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/mocassin-blanc-casse-phtwwa",
+						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
+                    }]
 			
         }
 		,
@@ -122,6 +158,15 @@
             "title":"IF I WERE YOU I GO TO THE DOCTOR",
 			"subtitle":"Go to the Doctor",
             "image_url":"http://madawin.mg/image/company/xa5ijzfajtl9",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/mocassin-blanc-casse-phtwwa",
+						"title": "voir"
+                    },{
+                        "type": "web_url",
+                        "url":"https://mighty-scrubland-34638.herokuapp.com/",
+						"title": "Commander"
+                    }]
 			
         }
 		
