@@ -129,7 +129,10 @@ app.post('/webhook/', function (req, res) {
                 sendPizzaCTA(sender);
                 continue;
 			} else if (upperCasedText.includes('VAOVAO')) {
-                sendTextMessage(sender, "Mbola tsy misy vaovao aloha atreno");
+                sendTextMessage(sender, "Mbola tsy misy vaovao aloha atreto");
+                continue
+			} else if (upperCasedText.includes('BONJOUR')) {
+                sendTextMessage(sender, "Bonjour que puis-je faire pour faire? Mode, chaussures ou parfums.");
                 continue
 			} else if (upperCasedText.includes('FA AHOANA FOTSINY')) {
                 sendTextMessage(sender, "Ka omaly anie talaka grobaka e!");
