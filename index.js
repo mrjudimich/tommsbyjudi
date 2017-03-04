@@ -273,14 +273,13 @@ function sendPizzaCTA(sender) {
  */
 function sendProducts(sender) {
 	
-	var xxx = require('http://tampon-personnalise.eco-multiservice.mg/products.json'); // product data stored on the server
-    var messageData = {
+	var messageData = {
         "attachment": {
             "type": "template",
             "payload": {
                 "template_type": "generic",
 				
-                "elements": xxx.missdressing_products
+                "elements": missdressing_products.missdressing_products
             }
         }
     };
