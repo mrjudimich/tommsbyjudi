@@ -42,7 +42,7 @@ app.post('/webhook', function (req, res) {
 			var text2 = event.message.text;
             var upperCasedText = text2.toUpperCase();
 			
-            if (upperCasedText.includes('SAD')) {
+            if (upperCasedText.includes('HELLO')) {
 					var valiny="you say HELLO";
 					sendProducts(event.sender.id)
 			} else if (upperCasedText.includes('SICK')) {
