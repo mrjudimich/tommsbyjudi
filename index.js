@@ -280,7 +280,51 @@ function sendAppboyMessage(sender) {
     // send the message
     sendMessage(sender, messageData);
 }
+function sendChaussures(sender) {
+    var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+				
+                "elements": missdressing_products.chaussures
+            }
+        }
+    };
 
+    // send the message
+    sendMessage(sender, messageData);
+}
+function sendParfums(sender) {
+    var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+				
+                "elements": missdressing_products.parfums
+            }
+        }
+    };
+
+    // send the message
+    sendMessage(sender, messageData);
+}
+function sendHabillement(sender) {
+    var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+				
+                "elements": missdressing_products.missdressing_products
+            }
+        }
+    };
+
+    // send the message
+    sendMessage(sender, messageData);
+}
 function sendFileMessage(sender, url, fileType) {
     var messageData = {
         "attachment":{
