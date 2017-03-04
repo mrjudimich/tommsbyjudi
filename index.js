@@ -36,12 +36,12 @@ app.post('/webhook', function (req, res) {
         var event = events[i];
         if (event.message && event.message.text) {
             // get reply from eliza 
+			var valiny="Merci judi";
+			sendMessage(event.sender.id,{text: valiny});
+			
             var reply = eliza.transform(event.message.text);
             sendMessage(event.sender.id, {text: reply});
 			
-			var valiny="Merci judi";
-			sendMessage(event.sender.id,{text: valiny});
-    
         } 
     }
     res.sendStatus(200);
