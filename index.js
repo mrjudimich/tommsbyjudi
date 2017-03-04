@@ -137,10 +137,23 @@ app.post('/webhook/', function (req, res) {
 			} else if (upperCasedText.includes('DIA AONA ZANY')) {
                 sendTextMessage(sender, "Mandehana mody aloha e!");
                 continue
-			} else if (upperCasedText.includes('WHO BUILT THIS')) {
-                sendAppboyMessage(sender)
+			} else if (upperCasedText.includes('produits')) {
+                sendProduits(sender)
                 continue
-            } else if (upperCasedText.includes('MARKETING')) {
+            }
+			} else if (upperCasedText.includes('chaussures')) {
+                sendChaussures(sender)
+                continue
+            }
+			} else if (upperCasedText.includes('parfums')) {
+                sendParfums(sender)
+                continue
+            }
+			} else if (upperCasedText.includes('habillement')) {
+                sendHabillement(sender)
+                continue
+            }
+			else if (upperCasedText.includes('MARKETING')) {
                 sendTextMessage(sender, "Check out our multichannel matrix white paper! \ud83d\udcc8");
                 sendFileMessage(sender, "http://info.appboy.com/rs/appboy/images/Multi_Channel_Matrix.pdf", 'file');
                 continue
@@ -266,10 +279,58 @@ function sendAppboyMessage(sender) {
             }
         }
     };
-
     // send the message
     sendMessage(sender, messageData);
 }
+function sendProduits(sender) {
+    var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": missdressing_products.missdressing_products
+            }
+        }
+    };
+    sendMessage(sender, messageData);
+}
+function sendChaussures(sender) {
+    var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": missdressing_products.chaussures
+            }
+        }
+    };
+    sendMessage(sender, messageData);
+}
+function sendParfums(sender) {
+    var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": missdressing_products.parfums
+            }
+        }
+    };
+    sendMessage(sender, messageData);
+}
+function sendHabillement(sender) {
+    var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": missdressing_products.habillement
+            }
+        }
+    };
+    sendMessage(sender, messageData);
+}
+
 
 function sendFileMessage(sender, url, fileType) {
     var messageData = {

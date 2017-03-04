@@ -41,5 +41,93 @@
                     }]
         }
 		
+    ],
+	"chaussures": [
+		{
+            "title":"MOCASSIN BLANC CASSE",
+			"subtitle":"chaussures",
+            "image_url":"http://www.madawin.mg/image/product/ggyhwxegl0fz?size=254",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/mocassin-blanc-casse-phtwwa",
+						"title": "voir"
+                    }]
+        },
+		{
+            "title":"BALERINE MATIERE CROCO",
+			"subtitle":"chaussures",
+            "image_url":"http://www.madawin.mg/image/product/olclo3bfsr0y?size=254",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/ballerine-matiere-croco-a5q0ey",
+						"title": "voir"
+                    }]
+        }
+		
+    ],
+	"parfums": [
+        {
+            "title":"APPTITUD GIORGIO ARMANI",
+			"subtitle":"parfum",
+            "image_url":"http://www.madawin.mg/image/product/1nl27xdytkzi?size=254",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/attitude-giorgio-armani-we4j0x",
+						"title": "voir"
+                    }]
+        },
+        {
+            "title":"VANITA",
+			"subtitle":"parfum",
+            "image_url":"http://www.madawin.mg/image/product/wrvh692eto6o?size=254",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/vanita-xe71pq",
+						"title": "voir"
+                    }]
+        }
+    ],
+	"habillement": [
+        {
+            "title":"APPTITUD GIORGIO ARMANI",
+			"subtitle":"parfum",
+            "image_url":"http://www.madawin.mg/image/product/1nl27xdytkzi?size=254",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/attitude-giorgio-armani-we4j0x",
+						"title": "voir"
+                    }]
+        },
+        {
+            "title":"VANITA",
+			"subtitle":"parfum",
+            "image_url":"http://www.madawin.mg/image/product/wrvh692eto6o?size=254",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/vanita-xe71pq",
+						"title": "voir"
+                    }]
+        },
+		{
+            "title":"MOCASSIN BLANC CASSE",
+			"subtitle":"chaussures",
+            "image_url":"http://www.madawin.mg/image/product/ggyhwxegl0fz?size=254",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/mocassin-blanc-casse-phtwwa",
+						"title": "voir"
+                    }]
+        },
+		{
+            "title":"BALERINE MATIERE CROCO",
+			"subtitle":"parfum",
+            "image_url":"http://www.madawin.mg/image/product/olclo3bfsr0y?size=254",
+			"buttons": [{
+                        "type": "web_url",
+                        "url":"http://www.madawin.mg/company/missdressing/product/ballerine-matiere-croco-a5q0ey",
+						"title": "voir"
+                    }]
+        }
+		
     ]
 }
