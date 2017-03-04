@@ -258,9 +258,11 @@ function sendAppboyMessage(sender) {
     var messageData = {
         "attachment": {
             "type": "template",
-			"title": "Peut être les produits suivants vous interesse",
             "payload": {
                 "template_type": "generic",
+				"intro_message": "Here\'s a sample flight itinerary. We're not really in the airline business though. Not yet, anyway.",
+				"locale": "en_US",
+				"theme_color":"#1C222B",
                 "elements": [{
                     "title": "Appboy",
                     "subtitle": "Premier Marketing Automation for Apps",
@@ -271,6 +273,50 @@ function sendAppboyMessage(sender) {
                         "title": "Learn more"
                     }]
                 },
+				{
+                    "title": "Appboy",
+                    "subtitle": "Second",
+                    "image_url": myURL + "/appboy_logo.png",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "https://www.appboy.com",
+                        "title": "Learn more again"
+                    }]
+                }
+				,
+				{
+                    "title": "Appboy",
+                    "subtitle": "Second",
+                    "image_url": myURL + "/appboy_logo.png",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "https://www.appboy.com",
+                        "title": "Learn more again"
+                    }]
+                }
+				,
+				{
+                    "title": "Appboy",
+                    "subtitle": "Second",
+                    "image_url": myURL + "/appboy_logo.png",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "https://www.appboy.com",
+                        "title": "Learn more again"
+                    }]
+                }
+				,
+				{
+                    "title": "Appboy",
+                    "subtitle": "Second",
+                    "image_url": myURL + "/appboy_logo.png",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "https://www.appboy.com",
+                        "title": "Learn more again"
+                    }]
+                }
+				,
 				{
                     "title": "Appboy",
                     "subtitle": "Second",
