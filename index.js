@@ -42,10 +42,10 @@ app.post('/webhook', function (req, res) {
 			var text = event.message.text;
             var upperCasedText = text.toUpperCase();
             if (upperCasedText.includes('HI')) {
-                sendTextMessage(event.sender.id, "Ity misy sary" );
+                sendMessage(event.sender.id,"Tsy misy sary");
                 continue;
 			}
-			sendTextMessage(event.sender.id, "Tsy misy sary");
+			sendMessage(event.sender.id,"Misy sary");
              
         } 
     }
