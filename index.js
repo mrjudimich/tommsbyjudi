@@ -44,10 +44,10 @@ app.post('/webhook', function (req, res) {
 			
             if (upperCasedText.includes('HELLO')) {
 					var valiny="you say HELLO";
-					sendProducts(sender)
+					sendProducts(event.sender.id)
 			} else if (upperCasedText.includes('SICK')) {
 					var valiny="you say SICK";
-					sendChaussures(sender)
+					sendChaussures(event.sender.id)
 			} 
 			
             var reply = eliza.transform(event.message.text);
