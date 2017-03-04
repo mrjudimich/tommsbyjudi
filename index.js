@@ -256,9 +256,7 @@ function sendPizzaCTA(sender) {
  */
 function sendAppboyMessage(sender) {
     var messageData = {
-        "attachment": 
-		[
-		{
+        "attachment": {
             "type": "template",
             "payload": {
                 "template_type": "generic",
@@ -271,57 +269,21 @@ function sendAppboyMessage(sender) {
                         "url": "https://www.appboy.com",
                         "title": "Learn more"
                     }]
-                }]
-            }
-        },
-		{
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": [{
+                },
+				{
                     "title": "Appboy",
-                    "subtitle": "Premier Marketing Automation for Apps",
+                    "subtitle": "Second",
                     "image_url": myURL + "/appboy_logo.png",
                     "buttons": [{
                         "type": "web_url",
                         "url": "https://www.appboy.com",
-                        "title": "Learn more"
+                        "title": "Learn more again"
                     }]
-                }]
-            }
-        },{
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": [{
-                    "title": "Appboy",
-                    "subtitle": "Premier Marketing Automation for Apps",
-                    "image_url": myURL + "/appboy_logo.png",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.appboy.com",
-                        "title": "Learn more"
-                    }]
-                }]
-            }
-        },{
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": [{
-                    "title": "Appboy",
-                    "subtitle": "Premier Marketing Automation for Apps",
-                    "image_url": myURL + "/appboy_logo.png",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.appboy.com",
-                        "title": "Learn more"
-                    }]
-                }]
+                }
+				
+				]
             }
         }
-		
-	]
     };
 
     // send the message
