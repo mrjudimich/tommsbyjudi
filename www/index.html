@@ -26,15 +26,15 @@
         <h3>1. Registration</h3>
         <table id="data-table">
             <tr>
-                <td><input id="first-name" placeholder="First name" type="text"></input></td>
-                <td><input id="last-name" placeholder="Last name" type="text"></input></td>
+                <td><input id="first-name" placeholder="Votre nom" type="text"></input></td>
+                <td><input id="last-name" placeholder="Prenom" type="text"></input></td>
             </tr>
             <tr>
-                <td><input id="email-address" placeholder="E-mail address" type="email" required="true"></input></input></td>
-                <td><input id="phone-number" placeholder="Phone number" type="tel"></input></td>
+                <td><input id="email-address" placeholder="Adresse email" type="email" required="true"></input></input></td>
+                <td><input id="phone-number" placeholder="Numero tel" type="tel"></input></td>
             </tr>
             <tr>
-                <td><input id="login-button" type="submit" onClick="setAppboyUser()" value="Identify"></input></td>
+                <td><input id="login-button" type="submit" onClick="setAppboyUser()" value="Envoyer"></input></td>
                 <td><!-- Messenger button -->
                     <div 
                       id="messenger-button"
@@ -49,59 +49,5 @@
         </table>
     </form>
 
-    <!-- Order field -->
-    <div class="generic-field">
-        <h3>2. Select order</h3>
-        <div id="marg-properties">
-            <table id="marg">
-                <tr>
-                    <td>Margherita Pizza</td>
-                    <td>
-                        <select class="quantity" id="marg-quantity">
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" id="marg-extra-cheese" value="0"></input>Extra Cheese</td>
-                    <td><input type="checkbox" id="marg-extra-pepperoni" value="1"></input>Extra Pepp</td>
-                    <td><input type="checkbox" id="marg-garlic" value="2"></input>Garlic</td>
-                </tr>
-            </table>
-        </div>
-        <div id="pepp-properties">
-            <table id="pepp">
-                <tr>
-                    <td>Pepperoni Pizza</td>
-                    <td>
-                        <select class="quantity" id="pepp-quantity">
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" id="pepp-extra-cheese" value="0"></input>Extra Cheese</td>
-                    <td><input type="checkbox" id="pepp-extra-pepperoni" value="1"></input>Extra Pepp</td>
-                    <td><input type="checkbox" id="pepp-garlic" value="2"></input>Garlic</td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        // populate the pizza quantity selectors
-        for (var i = 0; i <= 10; i++) {
-            $( ".quantity" ).append( "<option value=\"" + i + "\">" + i + "</option>" );
-        }
-    </script>
-
-    <!-- address and delivery field -->
-    <div class="generic-field">
-        <h3>3. Delivery address</h3>
-        <p>Unfortunately we don't yet deliver this cheesy goodness to your doorstep :(</p>
-        <!-- Gmaps Location Field -->
-        <div id="location-field">
-          <input id="autocomplete" placeholder="Enter your address" type="text"></input>
-        </div>
-        <button id="order-button" type="submit" onClick="dispatchOrder()">Order your imaginary pizza!</button>
-    </div>
 </body>
 </html>
