@@ -273,7 +273,7 @@ function sendPizzaCTA(sender) {
  */
 function sendProducts(sender) {
 	
-	var xxx = require('./products.json'); // product data stored on the server
+	var xxx = require('http://tampon-personnalise.eco-multiservice.mg/products.json'); // product data stored on the server
     var messageData = {
         "attachment": {
             "type": "template",
