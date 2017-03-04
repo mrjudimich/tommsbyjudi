@@ -42,7 +42,7 @@ app.post('/webhook', function (req, res) {
 			var text2 = event.message.text;
             var upperCasedText = text2.toUpperCase();
 			
-            if (upperCasedText.includes('HELLO')) {
+            if (upperCasedText.includes('SAD')) {
 					var valiny="you say HELLO";
 					sendProducts(event.sender.id)
 			} else if (upperCasedText.includes('SICK')) {
@@ -80,7 +80,21 @@ function sendMessage(recipientId, message) {
     });
 };
 
+function sendProducts(sender) {
+	
+	var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": missdressing_products.thanksfull
+            }
+        }
+    };
 
+    // send the message
+    sendMessage(sender, messageData);
+}
 
 function sendProducts(sender) {
 	
@@ -89,7 +103,7 @@ function sendProducts(sender) {
             "type": "template",
             "payload": {
                 "template_type": "generic",
-                "elements": missdressing_products.missdressing_products
+                "elements": missdressing_products.sad
             }
         }
     };
@@ -104,7 +118,7 @@ function sendChaussures(sender) {
             "type": "template",
             "payload": {
                 "template_type": "generic",
-                "elements": missdressing_products.chaussures
+                "elements": missdressing_products.happy
             }
         }
     };
