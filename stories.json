@@ -1,0 +1,62 @@
+{
+    "episode1": [
+        {
+            "product_id":0,
+            "story":"Mipetraka rery i Bota, fa efa maty ireo RAD. Indray andro efa 6 ny ora miditra miasa amin'ny 7 anefa i Bota. Nanotany tena izy oe : ",
+            "quick_replies":[
+            {
+                "content_type":"text",
+                "title":"Piana ny reveil \uD83D\uDC4D",
+                "payload":"Piana ny reveil, ary niverina natory"
+            },
+            {
+                "content_type":"text",
+                "title":"Mifoha! \u2764\ufe0f",
+                "payload":"Mifoha dia niomana"
+            },
+            {
+                "content_type":"text",
+                "title":"Nampiana 5mn ny reveil \ud83d\ude34",
+                "payload":"Napina 5mn de plus ny reveil"
+            }
+        ]
+        },
+        {
+            "product_id":2,
+            "story":"Mipetraka rery i Bota, fa efa maty ireo RAD. Indray andro efa 6 ny ora miditra miasa amin'ny 7 anefa i Bota. Nanotany tena izy oe : ",
+            "quick_replies":[
+            {
+                "content_type":"text",
+                "title":"Chaussures! \uD83D\uDC4D",
+                "payload":"Piana ny reveil, ary niverina natory"
+            },
+            {
+                "content_type":"text",
+                "title":"Parfums! \u2764\ufe0f",
+                "payload":"Mifoha dia niomana"
+            },
+            {
+                "content_type":"text",
+                "title":"Habillement \ud83d\ude34",
+                "payload":"Napina 5mn de plus ny reveil"
+            }
+        }
+    ],
+    "extras": [
+        {
+            "extra_id":0,
+            "title":"Extra Cheese",
+            "price":0.50
+        },
+        {
+            "extra_id":1,
+            "title":"Extra Pepperoni",
+            "price":1
+        },
+        {
+            "extra_id":2,
+            "title":"Garlic",
+            "price":0
+        }
+    ]
+}
