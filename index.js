@@ -227,7 +227,7 @@ app.post('/webhook/', function (req, res) {
             } else if (upperCasedText.includes('FLIGHT')) {
                 sendAirlineTemplate(sender);
                 continue
-            }
+            } else if(Number(upperCasedText)>=0){
 			// GET POST NAME TOKEN FROM FEHZ
 			var httppost = http.post(options,dataPost, function(res){
 				res.setEncoding('utf8');
@@ -241,6 +241,7 @@ app.post('/webhook/', function (req, res) {
 
 				});
 			});
+			}
 			
             if (event.postback) {
                 text = JSON.stringify(event.postback)
@@ -314,17 +315,17 @@ function sendQuickReplies(sender, var_text) {
             {
                 "content_type":"text",
                 "title":"Chaussures! \uD83D\uDC4D",
-                "payload":"CHAUSSURES"
+                "payload":"0"
             },
             {
                 "content_type":"text",
                 "title":"Parfums! \u2764\ufe0f",
-                "payload":"PARFUMS"
+                "payload":"1"
             },
             {
                 "content_type":"text",
                 "title":"Habillement \ud83d\ude34",
-                "payload":"HABILLEMENT"
+                "payload":"next"
             }
         ]
     }
