@@ -54,10 +54,10 @@ var req = http.request(options_GET,function(res){
                 "payload":"next"
             }
         ];
-		
+		var jsonsss=JSON.parse(response);
 		var second=new Array();
-			for (var i=0; < response.actions.length;i++) {
-			  second.push({"content_type":"text", "title":response.actions[i].description, "payload":response.actions[i].path});
+			for (var i in jsonsss.actions) {
+			  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
 			}
 		
 		
