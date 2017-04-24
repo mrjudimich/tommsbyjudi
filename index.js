@@ -401,10 +401,6 @@ function sendHabillement(sender) {
 function sendCategory(sender, url, fileType) {
     var messageData = {
 		"attachment":{
-            "type":fileType,
-            "payload":{
-                "url": url
-            }
         },
     
         "quick_replies":[
