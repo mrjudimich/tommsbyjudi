@@ -3,7 +3,45 @@ var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var http = require("http");
+http.post = require('http-post');
 
+var options = {
+  hostname: 'tomss.azurewebsites.net',
+  port: 80,
+  path: '/user',
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json',
+  }
+};
+var dataPost= { name: 'judiqsq', email: 'j121212111212', password: 'azerty' };
+
+function sendAirlineTemplate(var_token) {
+var options_GET = {
+  hostname: 'tomss.azurewebsites.net',
+  port: 80,
+  path: '/book/first-book/chapter/1/action?actionId=1&token='+var_token,
+  method: 'GET',
+  headers: {
+      'Content-Type': 'application/json',
+  }
+};
+
+var req = http.request(options_GET,function(res){
+	var response='';
+	res.setEncoding('utf8');
+	res.on('data', function(chunk) {
+		console.log(chunk);
+		response+=chunk;
+	});
+	res.on("end", function () {
+        console.log("finished :" + response); 
+        // print to console when response ends
+    });
+});
+req.end();
+}
 // other requirements
 var bodyParser = require('body-parser');
 var request = require('request');
@@ -180,10 +218,19 @@ app.post('/webhook/', function (req, res) {
                 sendAirlineTemplate(sender);
                 continue
             }
-            sendTextMessage(sender, "Vous avez ecrit :" + text.substring(0, 200)+". Malheureusement ceci n'est pas dans la base de données" );
-            sendTextMessage(sender, "Parmi nos nombreux produits, vous pouvez choisir selon les catégories suivantes :" );
-			sendCategory(sender, myURL + "/appboy_logo.png", 'image');
 			
+			var httppost = http.post(options,dataPost, function(res){
+				res.setEncoding('utf8');
+				res.on('data', function(chunk) {
+					console.log('name: ' + chunk);
+					var jss=JSON.parse(chunk);
+					console.log('name: ' + jss.name);
+					console.log('token: ' + jss.token);
+					sendTextMessage(sender, "Name:" + jss.name+", Token:"+jss.token );
+						
+				});
+			});
+
             if (event.postback) {
                 text = JSON.stringify(event.postback)
                 sendTextMessage(sender, "Postback received:" + text.substring(0, 200))
