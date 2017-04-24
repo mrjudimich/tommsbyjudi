@@ -265,6 +265,8 @@ app.post('/webhook/', function (req, res) {
 
 				});
 			});
+			} else if(text.substring(0, 4).equals('http'){
+				sendTextMessage(sender, text);
 			}
 			
 			
