@@ -37,7 +37,12 @@ var req = http.request(options_GET,function(res){
 	});
 	res.on("end", function () {
         console.log("finished :" + response);
-        // print to console when response ends
+		quick_replies = {
+				 {"content_type":"text","title":"first of all","payload":"1"},
+				 {"content_type":"text","title":"sencond round","payload":"2"},
+				 {"content_type":"text","title":"third round","payload":"3"},
+		};
+		sendQuickReplies(sender,"Choisir la suite",quick_replies);
     });
 });
 req.end();
@@ -314,11 +319,9 @@ function sendTextMessage(sender, text) {
     var messageData = {
         text:text
     };
-
     // send the message
     sendMessage(sender, messageData);
 }
-
 
 function sendQuickReplies(sender,var_text,var_quick) {
     var messageData = {
