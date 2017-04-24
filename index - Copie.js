@@ -206,7 +206,7 @@ app.use(function (err, req, res, next) {
 });
 
 // FACEBOOK MESSENGER AUTH TOKEN
-var FACEBOOK_ACCESS_TOKEN = "EAAI7ccGDI6ABADJKEC1400oTDlO8aslbvaBTzZAjwobZBoYn35qMDgdoQfoCVbCwpFjHQbbYKzFnZAz9QvBIYWZCpjKkZBR5tlotQmYmZA90pxFtJPhe3uaO6NJoqClEhS7sCLEZA7ETTtSZAidaw9u5v2ZBAZBOauIlAYk52bowhCMgZDZD";
+var FACEBOOK_ACCESS_TOKEN = "EAAI7ccGDI6ABABm1GBuwANsjUfNZAhSNeYeNqjylSoZANDC5It2DI4X8OghWPlZAjsP4Tn0LFZBqJUTHX1trOrTBDiru8CN2cvLQTndjt6rLaJBBvsxnBJ0Sw1c5hYcMo2ZBQKjq0GH4yMBE8aHKKsRpfAOIcu9ReTWSu0SnuvAZDZD";
 
 /**
  * Sends a message to a given Facebook Messenger ID using a POST request to the Facebook Send API
