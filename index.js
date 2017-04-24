@@ -266,8 +266,7 @@ app.post('/webhook/', function (req, res) {
 				});
 			});
 			} else if(text.substring(0,4).includes('http'){
-				sendGET(text);
-				
+				//sendGET(text);
 			}
 			
 			
