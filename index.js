@@ -21,7 +21,7 @@ function sendGET(var_token) {
 var options_GET = {
   hostname: 'tomss.azurewebsites.net',
   port: 80,
-  path: '/book/first-book/chapter/1/action?actionId=1&token='+var_token,
+  path: '/book/first-book/chapter/1?token='+var_token,
   method: 'GET',
   headers: {
       'Content-Type': 'application/json',
