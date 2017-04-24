@@ -17,7 +17,7 @@ var options = {
 };
 var dataPost= { name: 'judiqsq', email: 'j121212111212', password: 'azerty' };
 
-function sendAirlineTemplate2(var_token) {
+function sendGET(var_token) {
 var options_GET = {
   hostname: 'tomss.azurewebsites.net',
   port: 80,
@@ -218,19 +218,10 @@ app.post('/webhook/', function (req, res) {
                 sendAirlineTemplate(sender);
                 continue
             }
+            sendTextMessage(sender, "Vous avez ecrit :" + text.substring(0, 200)+". Malheureusement ceci n'est pas dans la base de données" );
+            sendTextMessage(sender, "Parmi nos nombreux produits, vous pouvez choisir selon les catégories suivantes :" );
+			sendCategory(sender, myURL + "/appboy_logo.png", 'image');
 			
-			var httppost = http.post(options,dataPost, function(res){
-				res.setEncoding('utf8');
-				res.on('data', function(chunk) {
-					console.log('name: ' + chunk);
-					var jss=JSON.parse(chunk);
-					console.log('name: ' + jss.name);
-					console.log('token: ' + jss.token);
-					sendTextMessage(sender, "Name:" + jss.name+", Token:"+jss.token );
-						
-				});
-			});
-
             if (event.postback) {
                 text = JSON.stringify(event.postback)
                 sendTextMessage(sender, "Postback received:" + text.substring(0, 200))
