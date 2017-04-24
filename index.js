@@ -58,8 +58,7 @@ var req = http.request(options_GET,function(res){
 		var second=new Array();
 			for (var i in jsonsss.actions) {
 			  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
-			  sendTextMessage(sender,"MESSAGE PATH:"+jsonsss.actions[i].path.substring(0,4).equals('http');
-			  
+			  sendTextMessage(sender,"MESSAGE PATH:"+jsonsss.actions[i].path.substring(0,4));
 			}
 		
 		sendQuickReplies(sender,"Choisir la suite...", second);
@@ -267,7 +266,7 @@ app.post('/webhook/', function (req, res) {
 				});
 			});
 			} else if(text.substring(0,4).equals("http")){
-				sendTextMessage(text);
+				sendTextMessage(sender,text);
 			}
 			
 			
