@@ -17,7 +17,7 @@ var options = {
 };
 var dataPost= { name: 'judiqsq', email: 'j121212111212', password: 'azerty' };
 
-function sendAirlineTemplate(var_token) {
+function sendAirlineTemplate2(var_token) {
 var options_GET = {
   hostname: 'tomss.azurewebsites.net',
   port: 80,
