@@ -400,8 +400,7 @@ function sendHabillement(sender) {
 
 function sendCategory(sender, url, fileType) {
     var messageData = {
-		"attachment":{
-        },
+		"text":"Choisir une réponse",
     
         "quick_replies":[
             {
