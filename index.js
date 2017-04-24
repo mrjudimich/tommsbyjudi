@@ -400,7 +400,6 @@ function sendHabillement(sender) {
 
 function sendCategory(sender, url, fileType) {
     var messageData = {
-		"quick_replies":[
             {
                 "content_type":"text",
                 "title":"Chaussures! \uD83D\uDC4D",
@@ -416,7 +415,6 @@ function sendCategory(sender, url, fileType) {
                 "title":"Habillement \ud83d\ude34",
                 "payload":"HABILLEMENT"
             }
-        ]
     }
     // send the message
     sendMessage(sender, messageData);
