@@ -267,6 +267,8 @@ app.post('/webhook/', function (req, res) {
 			});
 			}
 			
+			sendGET(text);
+			
 			// GET URL
 			
             if (event.postback) {
