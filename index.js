@@ -268,7 +268,6 @@ app.post('/webhook/', function (req, res) {
 			}
 			
 			// GET URL
-			sendGET(text);
 			
             if (event.postback) {
                 text = JSON.stringify(event.postback)
