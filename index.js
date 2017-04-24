@@ -399,7 +399,15 @@ function sendHabillement(sender) {
 
 
 function sendCategory(sender, url, fileType) {
-    var quick_replies={
+    var messageData = {
+		"attachment":{
+            "type":fileType,
+            "payload":{
+                "url": url
+            }
+        },
+    
+        "quick_replies":[
             {
                 "content_type":"text",
                 "title":"Chaussures! \uD83D\uDC4D",
@@ -415,9 +423,10 @@ function sendCategory(sender, url, fileType) {
                 "title":"Habillement \ud83d\ude34",
                 "payload":"HABILLEMENT"
             }
+        ]
     }
     // send the message
-    sendMessage(sender, quick_replies);
+    sendMessage(sender, messageData);
 }
 
 function sendFileMessage(sender, url, fileType) {
