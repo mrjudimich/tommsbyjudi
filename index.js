@@ -58,7 +58,6 @@ var req = http.request(options_GET,function(res){
 		var second=new Array();
 			for (var i in jsonsss.actions) {
 			  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
-			  sendTextMessage(sender,"MESSAGE PATH:"+jsonsss.actions[i].path.substring(0,4));
 			}
 		
 		sendQuickReplies(sender,"Choisir la suite...", second);
@@ -252,22 +251,20 @@ app.post('/webhook/', function (req, res) {
                 sendAirlineTemplate(sender);
                 continue
             } else if(Number(upperCasedText)>=0){
-			// GET POST NAME TOKEN FROM FEHZ
-			var httppost = http.post(options,dataPost, function(res){
-				res.setEncoding('utf8');
-				res.on('data', function(chunk) {
-					console.log('name: ' + chunk);
-					var jss=JSON.parse(chunk);
-					console.log('name: ' + jss.name);
-					console.log('token: ' + jss.token);
-					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
-					sendGET('/book/first-book/chapter/1?token='+jss.token);
+				// GET POST NAME TOKEN FROM FEHZ
+				var httppost = http.post(options,dataPost, function(res){
+					res.setEncoding('utf8');
+					res.on('data', function(chunk) {
+						console.log('name: ' + chunk);
+						var jss=JSON.parse(chunk);
+						console.log('name: ' + jss.name);
+						console.log('token: ' + jss.token);
+						sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
+						sendGET('/book/first-book/chapter/1?token='+jss.token);
 
+					});
 				});
-			});
-			} else if(text.substring(0,4).includes('http')){
-				sendTextMessage(sender,"text :"+text);
-			}
+			} 
 			
 			
 			
