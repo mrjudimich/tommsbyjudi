@@ -17,11 +17,11 @@ var options = {
 };
 var dataPost= { name: 'judiqsq', email: 'j121212111212', password: 'azerty' };
 
-function sendGET(var_token) {
+function sendGET(var_path) {
 var options_GET = {
   hostname: 'tomss.azurewebsites.net',
   port: 80,
-  path: '/book/first-book/chapter/1?token='+var_token,
+  path: var_path,
   method: 'GET',
   headers: {
       'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ var req = http.request(options_GET,function(res){
 	res.setEncoding('utf8');
 	res.on('data', function(chunk) {
 		console.log(chunk);
-		response+=chunk;
+		response=chunk;
 	});
 	res.on("end", function () {
         console.log("finished :" + response);
@@ -43,6 +43,14 @@ var req = http.request(options_GET,function(res){
 });
 req.end();
 }
+
+
+
+
+
+
+
+
 
 // other requirements
 var bodyParser = require('body-parser');
@@ -229,7 +237,7 @@ app.post('/webhook/', function (req, res) {
 					console.log('name: ' + jss.name);
 					console.log('token: ' + jss.token);
 					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
-					sendGET(jss.token);
+					sendGET('/book/first-book/chapter/1?token='+jss.token);
 
 				});
 			});
@@ -392,14 +400,7 @@ function sendHabillement(sender) {
 
 function sendCategory(sender, url, fileType) {
     var messageData = {
-		"attachment":{
-            "type":fileType,
-            "payload":{
-                "url": url
-            }
-        },
-    
-        "quick_replies":[
+		"quick_replies":[
             {
                 "content_type":"text",
                 "title":"Chaussures! \uD83D\uDC4D",
@@ -417,7 +418,6 @@ function sendCategory(sender, url, fileType) {
             }
         ]
     }
-
     // send the message
     sendMessage(sender, messageData);
 }
