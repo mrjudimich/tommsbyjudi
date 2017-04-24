@@ -37,7 +37,7 @@ var req = http.request(options_GET,function(res){
 	});
 	res.on("end", function () {
         console.log("finished :" + response);
-		var second=[
+		var third=[
             {
                 "content_type":"text",
                 "title":"Chaussures! \uD83D\uDC4D",
@@ -54,6 +54,13 @@ var req = http.request(options_GET,function(res){
                 "payload":"next"
             }
         ];
+		
+		var second=new Array();
+			for (var i in response.actions) {
+			  console.log('AAAAA: ' + i);
+			  second.push({"content_type":"text", "title":response.actions[i].description, "payload":response.actions[i].path});
+			}
+		
 		
 		sendQuickReplies(sender,"Choisir la suite...", second);
         // print to console when response ends
