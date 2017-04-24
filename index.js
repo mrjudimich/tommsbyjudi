@@ -37,7 +37,8 @@ var req = http.request(options_GET,function(res){
 	});
 	res.on("end", function () {
         console.log("finished :" + response);
-		sendQuickReplies(sender, "Choisir la suite...");
+		sendTextMessage(sender, "Response from fehz :"+response );
+		sendQuickReplies(sender,"Choisir la suite...");
         // print to console when response ends
     });
 });
@@ -186,6 +187,7 @@ app.post('/webhook/', function (req, res) {
                 sendTextMessage(sender, "Ka omaly anie talaka grobaka e!");
                 continue
 			} else if (upperCasedText.includes('TOMSS')) {
+                sendQuickReplies(sender, "Choisir la suite...");
                 continue
 			} else if (upperCasedText.includes('WHO BUILT THIS')) {
                 sendAppboyMessage(sender)
@@ -241,21 +243,6 @@ app.post('/webhook/', function (req, res) {
 				});
 			});
 			}
-			//first action
-			var httppost = http.post(options,dataPost, function(res){
-				res.setEncoding('utf8');
-				res.on('data', function(chunk) {
-					console.log('name: ' + chunk);
-					var jss=JSON.parse(chunk);
-					console.log('name: ' + jss.name);
-					console.log('token: ' + jss.token);
-					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
-					sendGET('/book/first-book/chapter/1?token='+jss.token);
-
-				});
-			});
-			
-			
 			
             if (event.postback) {
                 text = JSON.stringify(event.postback)
@@ -321,12 +308,27 @@ function sendTextMessage(sender, text) {
 }
 
 
-function sendQuickReplies(sender,var_text) {
+function sendQuickReplies(sender, var_text) {
     var messageData = {
 		"text":var_text,
-        "quick_replies": {{"content_type":"text","title":"first of all","payload":"1"},
-				 {"content_type":"text","title":"sencond round","payload":"2"},
-				 {"content_type":"text","title":"third round","payload":"3"}}
+    
+        "quick_replies":[
+            {
+                "content_type":"text",
+                "title":"Chaussures! \uD83D\uDC4D",
+                "payload":"0"
+            },
+            {
+                "content_type":"text",
+                "title":"Parfums! \u2764\ufe0f",
+                "payload":"1"
+            },
+            {
+                "content_type":"text",
+                "title":"Habillement \ud83d\ude34",
+                "payload":"next"
+            }
+        ]
     }
     // send the message
     sendMessage(sender, messageData);
