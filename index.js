@@ -321,12 +321,12 @@ function sendTextMessage(sender, text) {
 }
 
 
-function sendQuickReplies(sender,var_text,var_quick) {
+function sendQuickReplies(sender,var_text) {
     var messageData = {
 		"text":var_text,
         "quick_replies": {{"content_type":"text","title":"first of all","payload":"1"},
 				 {"content_type":"text","title":"sencond round","payload":"2"},
-		{"content_type":"text","title":"third round","payload":"3"}}
+				 {"content_type":"text","title":"third round","payload":"3"}}
     }
     // send the message
     sendMessage(sender, messageData);
