@@ -36,12 +36,14 @@ var req = http.request(options_GET,function(res){
 		response+=chunk;
 	});
 	res.on("end", function () {
-        console.log("finished :" + response); 
+        console.log("finished :" + response);
+		sendTextMessage(sender, "Response from fehz :"+response );
         // print to console when response ends
     });
 });
 req.end();
 }
+
 // other requirements
 var bodyParser = require('body-parser');
 var request = require('request');
@@ -227,6 +229,7 @@ app.post('/webhook/', function (req, res) {
 					console.log('name: ' + jss.name);
 					console.log('token: ' + jss.token);
 					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
+					sendGET(jss.token);
 
 				});
 			});
