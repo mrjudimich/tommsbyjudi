@@ -399,7 +399,7 @@ function sendHabillement(sender) {
 
 
 function sendCategory(sender, url, fileType) {
-    var messageData = {
+    var quick_replies={
             {
                 "content_type":"text",
                 "title":"Chaussures! \uD83D\uDC4D",
@@ -417,7 +417,7 @@ function sendCategory(sender, url, fileType) {
             }
     }
     // send the message
-    sendMessage(sender, messageData);
+    sendMessage(sender, quick_replies);
 }
 
 function sendFileMessage(sender, url, fileType) {
