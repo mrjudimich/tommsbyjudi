@@ -40,9 +40,9 @@ var req = http.request(options_GET,function(res){
 		quick_replies = {
 				 {"content_type":"text","title":"first of all","payload":"1"},
 				 {"content_type":"text","title":"sencond round","payload":"2"},
-				 {"content_type":"text","title":"third round","payload":"3"},
+				 {"content_type":"text","title":"third round","payload":"3"}
 		};
-		sendQuickReplies(sender,"Choisir la suite",quick_replies);
+		sendQuickReplies(sender,"Choisir la suite");
     });
 });
 req.end();
@@ -323,10 +323,12 @@ function sendTextMessage(sender, text) {
     sendMessage(sender, messageData);
 }
 
-function sendQuickReplies(sender,var_text,var_quick) {
+function sendQuickReplies(sender,var_text) {
     var messageData = {
 		"text":var_text,
-        "quick_replies": var_quick
+        "quick_replies": [{"content_type":"text","title":"first of all","payload":"1"},
+				 {"content_type":"text","title":"sencond round","payload":"2"},
+	{"content_type":"text","title":"third round","payload":"3"}]
     }
     // send the message
     sendMessage(sender, messageData);
