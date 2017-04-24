@@ -185,8 +185,8 @@ app.post('/webhook/', function (req, res) {
 			} else if (upperCasedText.includes('FA AHOANA FOTSINY')) {
                 sendTextMessage(sender, "Ka omaly anie talaka grobaka e!");
                 continue
-			} else if (upperCasedText.includes('DIA AONA ZANY')) {
-                sendTextMessage(sender, "Mandehana mody aloha e!");
+			} else if (upperCasedText.includes('TOMSS')) {
+                sendQuickReplies(sender, "Choisir la suite...");
                 continue
 			} else if (upperCasedText.includes('WHO BUILT THIS')) {
                 sendAppboyMessage(sender)
@@ -305,6 +305,32 @@ function sendTextMessage(sender, text) {
     sendMessage(sender, messageData);
 }
 
+
+function sendQuickReplies(sender, var_text) {
+    var messageData = {
+		"text":var_text,
+    
+        "quick_replies":[
+            {
+                "content_type":"text",
+                "title":"Chaussures! \uD83D\uDC4D",
+                "payload":"CHAUSSURES"
+            },
+            {
+                "content_type":"text",
+                "title":"Parfums! \u2764\ufe0f",
+                "payload":"PARFUMS"
+            },
+            {
+                "content_type":"text",
+                "title":"Habillement \ud83d\ude34",
+                "payload":"HABILLEMENT"
+            }
+        ]
+    }
+    // send the message
+    sendMessage(sender, messageData);
+}
 /**
  * Sends a Button message with a call to action to visit the site to a given Facebook Messenger ID using a POST request to the Facebook Send API
  * @param {string} sender - The page-specific Messenger ID of the intended recipient
