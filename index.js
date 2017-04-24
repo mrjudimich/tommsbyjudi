@@ -37,8 +37,25 @@ var req = http.request(options_GET,function(res){
 	});
 	res.on("end", function () {
         console.log("finished :" + response);
-		sendTextMessage(sender, "Response from fehz :"+response );
-		sendQuickReplies(sender,"Choisir la suite...");
+		var second=[
+            {
+                "content_type":"text",
+                "title":"Chaussures! \uD83D\uDC4D",
+                "payload":"0"
+            },
+            {
+                "content_type":"text",
+                "title":"Parfums! \u2764\ufe0f",
+                "payload":"1"
+            },
+            {
+                "content_type":"text",
+                "title":"Habillement \ud83d\ude34",
+                "payload":"next"
+            }
+        ];
+		
+		sendQuickReplies(sender,"Choisir la suite...", second);
         // print to console when response ends
     });
 });
@@ -308,27 +325,11 @@ function sendTextMessage(sender, text) {
 }
 
 
-function sendQuickReplies(sender, var_text) {
+function sendQuickReplies(sender, var_text, var_quick) {
     var messageData = {
 		"text":var_text,
     
-        "quick_replies":[
-            {
-                "content_type":"text",
-                "title":"Chaussures! \uD83D\uDC4D",
-                "payload":"0"
-            },
-            {
-                "content_type":"text",
-                "title":"Parfums! \u2764\ufe0f",
-                "payload":"1"
-            },
-            {
-                "content_type":"text",
-                "title":"Habillement \ud83d\ude34",
-                "payload":"next"
-            }
-        ]
+        "quick_replies": var_quick
     }
     // send the message
     sendMessage(sender, messageData);
