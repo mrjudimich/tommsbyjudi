@@ -56,7 +56,7 @@ var req = http.request(options_GET,function(res){
         ];
 		
 		var second=new Array();
-			for (var i in response.actions) {
+			for (var i=0; < response.actions.length;i++) {
 			  second.push({"content_type":"text", "title":response.actions[i].description, "payload":response.actions[i].path});
 			}
 		
