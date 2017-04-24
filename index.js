@@ -60,6 +60,7 @@ var req = http.request(options_GET,function(res){
 			  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
 			}
 		
+		
 		sendQuickReplies(sender,"Choisir la suite...", second);
         // print to console when response ends
     });
@@ -251,20 +252,20 @@ app.post('/webhook/', function (req, res) {
                 sendAirlineTemplate(sender);
                 continue
             } else if(Number(upperCasedText)>=0){
-				// GET POST NAME TOKEN FROM FEHZ
-				var httppost = http.post(options,dataPost, function(res){
-					res.setEncoding('utf8');
-					res.on('data', function(chunk) {
-						console.log('name: ' + chunk);
-						var jss=JSON.parse(chunk);
-						console.log('name: ' + jss.name);
-						console.log('token: ' + jss.token);
-						sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
-						sendGET('/book/first-book/chapter/1?token='+jss.token);
+			// GET POST NAME TOKEN FROM FEHZ
+			var httppost = http.post(options,dataPost, function(res){
+				res.setEncoding('utf8');
+				res.on('data', function(chunk) {
+					console.log('name: ' + chunk);
+					var jss=JSON.parse(chunk);
+					console.log('name: ' + jss.name);
+					console.log('token: ' + jss.token);
+					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
+					sendGET('/book/first-book/chapter/1?token='+jss.token);
 
-					});
 				});
-			} 
+			});
+			}
 			
 			
 			
