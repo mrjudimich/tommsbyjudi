@@ -61,7 +61,6 @@ var req = http.request(options_GET,function(res){
 			  sendTextMessage(sender,"MESSAGE PATH:"+jsonsss.actions[i].path.substring(0,4));
 			}
 		
-		
 		sendQuickReplies(sender,"Choisir la suite...", second);
         // print to console when response ends
     });
@@ -266,6 +265,9 @@ app.post('/webhook/', function (req, res) {
 
 				});
 			});
+			} else if(text.substring(0,4).includes('http'){
+				sendGET(text);
+				
 			}
 			
 			
