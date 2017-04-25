@@ -39,19 +39,19 @@ var req = http.request(options_GET,function(res){
         console.log("finished :" + response);
 		var third=[
             {
-                "content_type":"text",
+                "content_type":"postback",
                 "title":"Chaussures! \uD83D\uDC4D",
-                "payload":"0"
+                "payload":"0 judi michela"
             },
             {
-                "content_type":"text",
+                "content_type":"postback",
                 "title":"Parfums! \u2764\ufe0f",
-                "payload":"1"
+                "payload":"1sxcsd sdsds "
             },
             {
                 "content_type":"text",
                 "title":"Habillement \ud83d\ude34",
-                "payload":"next"
+                "payload":"next dsdsdsds"
             }
         ];
 		var jsonsss=JSON.parse(response);
@@ -222,9 +222,6 @@ app.post('/webhook/', function (req, res) {
                 sendProducts(sender)
                 continue
             }else if (upperCasedText.includes('CHAUSSURES')) {
-				if (event.postback){
-				receivedPostback(event);  
-				}
                 sendChaussures(sender)
                 continue
             }else if (upperCasedText.includes('PARFUMS')) {
@@ -268,7 +265,9 @@ app.post('/webhook/', function (req, res) {
 
 				});
 			});
-			} 
+			} else if (event.postback) {
+					receivedPostback(event);      
+			}
 			sendTextMessage(sender, text);
 			
 			// GET URL
