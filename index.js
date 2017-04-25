@@ -49,7 +49,7 @@ var req = http.request(options_GET,function(res){
                 "payload":"1sxcsd sdsds "
             },
             {
-                "content_type":"text",
+                "content_type":"postback",
                 "title":"Habillement \ud83d\ude34",
                 "payload":"next dsdsdsds"
             }
