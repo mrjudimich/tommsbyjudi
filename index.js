@@ -39,17 +39,17 @@ var req = http.request(options_GET,function(res){
         console.log("finished :" + response);
 		var third=[
             {
-                "content_type":"postback",
+                "content_type":"text",
                 "title":"Chaussures! \uD83D\uDC4D",
                 "payload":"0 judi michela"
             },
             {
-                "content_type":"postback",
+                "content_type":"text",
                 "title":"Parfums! \u2764\ufe0f",
                 "payload":"1sxcsd sdsds "
             },
             {
-                "content_type":"postback",
+                "content_type":"text",
                 "title":"Habillement \ud83d\ude34",
                 "payload":"next dsdsdsds"
             }
@@ -67,13 +67,6 @@ var req = http.request(options_GET,function(res){
 });
 req.end();
 }
-
-
-
-
-
-
-
 
 
 // other requirements
@@ -222,6 +215,7 @@ app.post('/webhook/', function (req, res) {
                 sendProducts(sender)
                 continue
             }else if (upperCasedText.includes('CHAUSSURES')) {
+				sendTextMessage(sender,"Message "+event.postback);
                 sendChaussures(sender)
                 continue
             }else if (upperCasedText.includes('PARFUMS')) {
