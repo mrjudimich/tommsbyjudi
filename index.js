@@ -57,11 +57,11 @@ var req = http.request(options_GET,function(res){
 		var jsonsss=JSON.parse(response);
 		var second=new Array();
 			for (var i in jsonsss.actions) {
-			  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":"1"});
+			  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
 			}
 		
 		
-		sendQuickReplies(sender,"Choisir la suite...", second);
+		sendQuickReplies(sender,"Choisir la suite...", third);
         // print to console when response ends
     });
 });
