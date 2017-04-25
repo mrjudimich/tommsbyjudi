@@ -215,7 +215,7 @@ app.post('/webhook/', function (req, res) {
                 sendProducts(sender)
                 continue
             }else if (upperCasedText.includes('CHAUSSURES')) {
-				sendTextMessage(sender,"Message "+event.postback.text);
+				sendTextMessage(sender,"Message "+event.message);
                 sendChaussures(sender)
                 continue
             }else if (upperCasedText.includes('PARFUMS')) {
