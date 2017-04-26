@@ -281,11 +281,8 @@ app.post('/webhook/', function (req, res) {
 			});
 			} 
 			
-			if(findChoiceByDescription(choiceSave,text).length>0){
-				sendTextMessage(sender, "Vous avez choisi : "+findChoiceByDescription(choiceSave,text));
-				sendGET(findChoiceByDescription(choiceSave,text));
-			}
-			
+			sendTextMessage(sender, "Vous avez choisi : "+findChoiceByDescription(choiceSave,text));
+			sendGET(findChoiceByDescription(choiceSave,text));
 			
 			// GET URL
 			
