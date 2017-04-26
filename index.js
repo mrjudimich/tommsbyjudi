@@ -271,7 +271,7 @@ app.post('/webhook/', function (req, res) {
 				});
 			});
 			} 
-			sendTextMessage(sender,"Vous avez taper ceci :"+findChoiceByDescription(choiceSave,text);
+			sendTextMessage(sender,"Vous avez taper ceci :"+findChoiceByDescription(choiceSave,text));
 			
 			// GET URL
 			
