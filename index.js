@@ -272,7 +272,7 @@ app.post('/webhook/', function (req, res) {
 			});
 			} 
 			sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
-			var httppost = http.post(options,dataPost, function(res){
+			var httppost2 = http.post(options,dataPost, function(res){
 				res.setEncoding('utf8');
 				res.on('data', function(chunk) {
 					console.log('name: ' + chunk);
@@ -280,7 +280,7 @@ app.post('/webhook/', function (req, res) {
 					console.log('name: ' + jss.name);
 					console.log('token: ' + jss.token);
 					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
-					sendGET(token);
+					sendGET(findChoiceByDescription(choiceSave,text));
 
 				});
 			});
