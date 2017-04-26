@@ -271,9 +271,11 @@ app.post('/webhook/', function (req, res) {
 				});
 			});
 			} 
-			sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
-			sendGET(findChoiceByDescription(choiceSave,text));
-			
+			if(!findChoiceByDescription(choiceSave,text).equals('')
+			{
+				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
+				sendGET(findChoiceByDescription(choiceSave,text));
+			}
 			// GET URL
 			
             if (event.postback) {
