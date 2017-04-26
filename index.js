@@ -258,7 +258,7 @@ app.post('/webhook/', function (req, res) {
 					console.log('name: ' + jss.name);
 					console.log('token: ' + jss.token);
 					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
-					sendGET("http://tomss.azurewebsites.net/book/first-book/chapter/1/action?&token="+jss.token);
+					sendGET('http://tomss.azurewebsites.net/book/first-book/chapter/1/action?&token='+jss.token);
 
 				});
 			});
