@@ -16,7 +16,82 @@ var options = {
 };
 
 var choiceSave=new Array();
-var sender='';
+
+function sendGET(var_path) {
+var options_GET = {
+  hostname: 'tomss.azurewebsites.net',
+  port: 80,
+  path: var_path,
+  method: 'GET',
+  headers: {
+      'Content-Type': 'application/json',
+  }
+};
+
+var req = http.request(var_path,function(res){
+	var response='';
+	res.setEncoding('utf8');
+	res.on('data', function(chunk) {
+		console.log(chunk);
+		response=chunk;
+	});
+	res.on("end", function () {
+        console.log("finished :" + response);
+		var third=[
+            {
+                "content_type":"text",
+                "title":"Chaussures! \uD83D\uDC4D",
+                "payload":"0"
+            },
+            {
+                "content_type":"text",
+                "title":"Parfums! \u2764\ufe0f",
+                "payload":"1"
+            },
+            {
+                "content_type":"text",
+                "title":"Habillement \ud83d\ude34",
+                "payload":"next"
+            }
+        ];
+		var jsonsss=JSON.parse(response);
+		
+		if(jsonsss.hasOwnProperty('nextUrl')){
+				sendGET(jsonsss.nextUrl);
+		}
+		else
+		{
+			var second=new Array();
+				for (var i in jsonsss.actions) {
+				  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
+				}
+				
+			if(jsonsss.content.length>0)
+			{
+				sendTextMessage(sender,"Histoire: "+jsonsss.content);
+			}
+			choiceSave=jsonsss;
+			sendQuickReplies(sender,"Choisir la suite...", second);	
+		}
+			
+		
+    });
+});
+req.end();
+}
+
+
+function findChoiceByDescription(data,descriptionSearch)
+{
+	var search="";
+		for (var i in data.actions) {
+			  if(data.actions[i].description.includes(descriptionSearch)){
+				  search=data.actions[i].path;
+			  }
+			}
+	return search;
+}
+
 
 // other requirements
 var bodyParser = require('body-parser');
@@ -139,7 +214,61 @@ app.post('/webhook/', function (req, res) {
         if (event.message && event.message.text) {
             text = event.message.text;
             var upperCasedText = text.toUpperCase();
-            if(Number(upperCasedText)>=0){
+            if (upperCasedText.includes('ORDER PIZZA')) {
+                sendPizzaCTA(sender);
+                continue;
+			} else if (upperCasedText.includes('VAOVAO')) {
+                sendTextMessage(sender, "Mbola tsy misy vaovao aloha atreto. Inona no azo atao anao: Mode, chaussures ou parfums.");
+                continue
+			} else if (upperCasedText.includes('BONJOUR')) {
+                sendTextMessage(sender, "Bonjour que puis-je faire pour faire? Mode, chaussures ou parfums.");
+                continue
+			} else if (upperCasedText.includes('FA AHOANA FOTSINY')) {
+                sendTextMessage(sender, "Ka omaly anie talaka grobaka e!");
+                continue
+			} else if (upperCasedText.includes('TOMSS')) {
+                sendQuickReplies(sender, "Choisir la suite...");
+                continue
+			} else if (upperCasedText.includes('WHO BUILT THIS')) {
+                sendAppboyMessage(sender)
+                continue
+			} else if (upperCasedText.includes('PROPOSITION')) {
+                sendCategory(sender, myURL + "/appboy_logo.png", 'image');
+                continue
+			}else if (upperCasedText.includes('MODE')) {
+                sendProducts(sender)
+                continue
+            }else if (upperCasedText.includes('CHAUSSURES')) {
+                sendChaussures(sender)
+                continue
+            }else if (upperCasedText.includes('PARFUMS')) {
+                sendParfums(sender)
+                continue
+            }else if (upperCasedText.includes('HABILLEMENT')) {
+                sendHabillement(sender)
+                continue
+            }
+			else if (upperCasedText.includes('MARKETING')) {
+                sendTextMessage(sender, "Check out our multichannel matrix white paper! \ud83d\udcc8");
+                sendFileMessage(sender, "http://info.appboy.com/rs/appboy/images/Multi_Channel_Matrix.pdf", 'file');
+                continue
+            } else if (upperCasedText.includes('PICTURE') || upperCasedText.includes('IMAGE')) {
+                sendTextMessage(sender, "Now you know who built me! To find out more just ask or visit our website!");
+                sendFileMessage(sender, myURL + "/appboy_logo.png", 'image');
+                continue
+            } else if (upperCasedText.includes('AWESOME')) {
+                sendTextMessage(sender, "Glad you liked it! \ud83d\ude0a");
+                continue
+            } else if (upperCasedText.includes('LOVE IT')) {
+                sendTextMessage(sender, 'We love it too! \ud83d\ude0d');
+                continue
+            } else if (upperCasedText.includes('BLAH')) {
+                sendTextMessage(sender, 'Aw, sorry you didn\'t like it! \ud83d\ude1f');
+                continue
+            } else if (upperCasedText.includes('FLIGHT')) {
+                sendAirlineTemplate(sender);
+                continue
+            } else if(Number(upperCasedText)>=0){
 			// GET POST NAME TOKEN FROM FEHZ
 			var dataPost= { name: sender, email: sender, password: sender };
 			var httppost = http.post(options,dataPost, function(res){
@@ -150,15 +279,15 @@ app.post('/webhook/', function (req, res) {
 					console.log('name: ' + jss.name);
 					console.log('token: ' + jss.token);
 					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
-					sendGET(sender,'http://tomss.azurewebsites.net/book/first-book/chapter/1?token='+jss.token);
+					sendGET('http://tomss.azurewebsites.net/book/first-book/chapter/1?token='+jss.token);
 
 				});
 			});
 			} 
 			
 			if( findChoiceByDescription(choiceSave,text).length > 0){
-				sendGET(sender,findChoiceByDescription(choiceSave,text));
 				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
+				sendGET(findChoiceByDescription(choiceSave,text));
 			}
 			
 			
@@ -231,6 +360,7 @@ function sendTextMessage(sender, text) {
 function sendQuickReplies(sender, var_text, var_quick) {
     var messageData = {
 		"text":var_text,
+    
         "quick_replies": var_quick
     }
     // send the message
@@ -266,6 +396,99 @@ function sendPizzaCTA(sender) {
  * @param {string} sender - The page-specific Messenger ID of the intended recipient
  * @return nothing
  */
+function sendProducts(sender) {
+	
+	var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+				
+                "elements": missdressing_products.missdressing_products
+            }
+        }
+    };
+
+    // send the message
+    sendMessage(sender, messageData);
+}
+function sendChaussures(sender) {
+    var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": missdressing_products.chaussures
+            }
+        }
+    };
+
+    // send the message
+    sendMessage(sender, messageData);
+}
+function sendParfums(sender) {
+    var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+				
+                "elements": missdressing_products.parfums
+            }
+        }
+    };
+
+    // send the message
+    sendMessage(sender, messageData);
+}
+
+function sendHabillement(sender) {
+    var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+				
+                "elements": missdressing_products.habillement
+            }
+        }
+    };
+
+    // send the message
+    sendMessage(sender, messageData);
+}
+
+
+function sendCategory(sender, url, fileType) {
+    var messageData = {
+		"attachment":{
+            "type":fileType,
+            "payload":{
+                "url": url
+            }
+        },
+    
+        "quick_replies":[
+            {
+                "content_type":"text",
+                "title":"Chaussures! \uD83D\uDC4D",
+                "payload":"CHAUSSURES"
+            },
+            {
+                "content_type":"text",
+                "title":"Parfums! \u2764\ufe0f",
+                "payload":"PARFUMS"
+            },
+            {
+                "content_type":"text",
+                "title":"Habillement \ud83d\ude34",
+                "payload":"HABILLEMENT"
+            }
+        ]
+    }
+    // send the message
+    sendMessage(sender, messageData);
+}
 
 function sendFileMessage(sender, url, fileType) {
     var messageData = {
@@ -431,62 +654,6 @@ function sendAirlineTemplate(sender) {
     sendMessage(sender, messageData);
 }
 
-function sendGET(sender,var_path) {
-var options_GET = {
-  hostname: 'tomss.azurewebsites.net',
-  port: 80,
-  path: var_path,
-  method: 'GET',
-  headers: {
-      'Content-Type': 'application/json',
-  }
-};
-
-var req = http.request(var_path,function(res){
-	var response='';
-	res.setEncoding('utf8');
-	res.on('data', function(chunk) {
-		console.log(chunk);
-		response=chunk;
-	});
-	res.on("end", function () {
-        console.log("finished :" + response);
-		var jsonsss=JSON.parse(response);
-		
-		if(jsonsss.hasOwnProperty('nextUrl')){
-				sendGET(jsonsss.nextUrl);
-		}
-		else
-		{
-			var second=new Array();
-				for (var i in jsonsss.actions) {
-				  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
-				}
-				
-			if(jsonsss.content.length>0)
-			{
-				sendTextMessage(sender,"Histoire: "+jsonsss.content);
-			}
-			sendQuickReplies(sender,"Choisir la suite...", second);
-			choiceSave=jsonsss;
-		}
-			
-		
-    });
-});
-req.end();
-}
-
-function findChoiceByDescription(data,descriptionSearch)
-{
-	var search="";
-		for (var i in data.actions) {
-			  if(data.actions[i].description.includes(descriptionSearch)){
-				  search=data.actions[i].path;
-			  }
-			}
-	return search;
-}
 // set port
 app.set('port', (process.env.PORT || 5000));
 server.listen(app.get('port'), function() {
