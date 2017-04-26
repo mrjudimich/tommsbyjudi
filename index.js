@@ -272,7 +272,7 @@ app.post('/webhook/', function (req, res) {
 			});
 			} 
 			sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
-			sendGET(findChoiceByDescription(choiceSave,text));
+			//sendGET(findChoiceByDescription(choiceSave,text));
 			
 			// GET URL
 			
