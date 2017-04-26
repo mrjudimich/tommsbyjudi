@@ -69,6 +69,51 @@ var req = http.request(options_GET,function(res){
 });
 req.end();
 }
+
+
+function sendGET2(var_path) {
+var req = http.get(var_path,function(res){
+	var response='';
+	res.setEncoding('utf8');
+	res.on('data', function(chunk) {
+		console.log(chunk);
+		response=chunk;
+	});
+	res.on("end", function () {
+        console.log("finished :" + response);
+		var third=[
+            {
+                "content_type":"text",
+                "title":"Chaussures! \uD83D\uDC4D",
+                "payload":"0"
+            },
+            {
+                "content_type":"text",
+                "title":"Parfums! \u2764\ufe0f",
+                "payload":"1"
+            },
+            {
+                "content_type":"text",
+                "title":"Habillement \ud83d\ude34",
+                "payload":"next"
+            }
+        ];
+		var jsonsss=JSON.parse(response);
+		var second=new Array();
+			for (var i in jsonsss.actions) {
+			  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
+			}
+		
+		choiceSave=jsonsss;
+		sendQuickReplies(sender,"Choisir la suite...", second);
+        // print to console when response ends
+    });
+});
+req.end();
+}
+
+
+
 function findChoiceByDescription(data,descriptionSearch)
 {
 	var search="";
@@ -266,16 +311,17 @@ app.post('/webhook/', function (req, res) {
 					console.log('name: ' + jss.name);
 					console.log('token: ' + jss.token);
 					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
-					sendGET('/book/first-book/chapter/1?token='+jss.token);
+					sendGET2("http://tomss.azurewebsites.net/book/first-book/chapter/1/action?&token="+jss.token);
 
 				});
 			});
-			} 
+			} /*
 			if(!findChoiceByDescription(choiceSave,text).equals('')
 			{
 				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
-				sendGET(findChoiceByDescription(choiceSave,text));
-			}
+				
+			}*/
+			sendGET(findChoiceByDescription(choiceSave,text));
 			// GET URL
 			
             if (event.postback) {
