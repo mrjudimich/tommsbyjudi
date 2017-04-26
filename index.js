@@ -58,17 +58,20 @@ var req = http.request(var_path,function(res){
         ];
 		var jsonsss=JSON.parse(response);
 		
-		if(jsonsss.nextUrl.equals('')){
-				var second=new Array();
+		if(jsonsss.hasOwnProperty('nextUrl')){
+
+		}
+		else
+		{
+			var second=new Array();
 				for (var i in jsonsss.actions) {
 				  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
 				}
 				
 			choiceSave=jsonsss;
-			sendQuickReplies(sender,"Choisir la suite...", second);
-			// print to console when response ends	
+			sendQuickReplies(sender,"Choisir la suite...", second);	
 		}
-		
+			
 		
     });
 });
@@ -279,7 +282,7 @@ app.post('/webhook/', function (req, res) {
 			});
 			} 
 			sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
-			sendGET(findChoiceByDescription(choiceSave,text));
+			//sendGET(findChoiceByDescription(choiceSave,text));
 			
 			// GET URL
 			
