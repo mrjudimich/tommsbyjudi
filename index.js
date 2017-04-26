@@ -16,8 +16,6 @@ var options = {
   }
 };
 var dataPost= { name: 'judiqsq', email: 'j121212111212', password: 'azerty' };
-var choiceSave=new Array();
-
 
 function sendGET(var_path) {
 var options_GET = {
@@ -43,42 +41,39 @@ var req = http.request(options_GET,function(res){
             {
                 "content_type":"text",
                 "title":"Chaussures! \uD83D\uDC4D",
-                "payload":"0 judi michela"
+                "payload":"0"
             },
             {
                 "content_type":"text",
                 "title":"Parfums! \u2764\ufe0f",
-                "payload":"1sxcsd sdsds "
+                "payload":"1"
             },
             {
                 "content_type":"text",
                 "title":"Habillement \ud83d\ude34",
-                "payload":"next dsdsdsds"
+                "payload":"next"
             }
         ];
 		var jsonsss=JSON.parse(response);
-		var choice=new Array();
+		var second=new Array();
 			for (var i in jsonsss.actions) {
-			  choice.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
+			  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
 			}
 		
-		choiceSave=jsonsss.actions;
-		sendQuickReplies(sender,"Choisir la suite...", choice);
+		
+		sendQuickReplies(sender,"Choisir la suite...", second);
         // print to console when response ends
     });
 });
 req.end();
 }
-function findChoiceByDescription(data,descriptionSearch)
-{
-	var search="";
-		for (var i in data) {
-			  if(data[i].description.includes(descriptionSearch)){
-				  search=data[i].path;
-			  }
-			}
-	return search;
-}
+
+
+
+
+
+
+
 
 
 // other requirements
@@ -227,7 +222,7 @@ app.post('/webhook/', function (req, res) {
                 sendProducts(sender)
                 continue
             }else if (upperCasedText.includes('CHAUSSURES')) {
-				sendChaussures(sender)
+                sendChaussures(sender)
                 continue
             }else if (upperCasedText.includes('PARFUMS')) {
                 sendParfums(sender)
@@ -271,7 +266,7 @@ app.post('/webhook/', function (req, res) {
 				});
 			});
 			} 
-			sendTextMessage(sender,"Vous avez taper ceci :"+findChoiceByDescription(choiceSave,text));
+			sendTextMessage(sender, text);
 			
 			// GET URL
 			
@@ -305,23 +300,6 @@ var FACEBOOK_ACCESS_TOKEN = "EAAI7ccGDI6ABADJKEC1400oTDlO8aslbvaBTzZAjwobZBoYn35
  * @param {Object} messageData - The contents of the message in Facebook-compliant JSON
  * @return nothing
  */
- function receivedPostback(event) {
-  var senderID = event.sender.id;
-  var recipientID = event.recipient.id;
-  var timeOfPostback = event.timestamp;
-
-  // The 'payload' param is a developer-defined field which is set in a postback 
-  // button for Structured Messages. 
-  var payload = event.postback.payload;
-
-  console.log("Received postback for user %d and page %d with payload '%s' " + 
-    "at %d", senderID, recipientID, payload, timeOfPostback);
-
-  // When a postback is called, we'll send a message back to the sender to 
-  // let them know it was successful
-  sendTextMessage(senderID, "Received postback for user "+senderID+" and page "+recipientID+" with payload "+payload+" at "+timeOfPostback);
-}
-
 function sendMessage(sender, messageData) {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
