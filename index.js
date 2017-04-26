@@ -5,7 +5,6 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var http = require("http");
 http.post = require('http-post');
-
 var options = {
   hostname: 'tomss.azurewebsites.net',
   port: 80,
@@ -15,7 +14,6 @@ var options = {
       'Content-Type': 'application/json',
   }
 };
-var dataPost= { name: sender, email: sender, password: sender };
 
 var choiceSave=new Array();
 
@@ -272,6 +270,7 @@ app.post('/webhook/', function (req, res) {
                 continue
             } else if(Number(upperCasedText)>=0){
 			// GET POST NAME TOKEN FROM FEHZ
+			var dataPost= { name: sender, email: sender, password: sender };
 			var httppost = http.post(options,dataPost, function(res){
 				res.setEncoding('utf8');
 				res.on('data', function(chunk) {
