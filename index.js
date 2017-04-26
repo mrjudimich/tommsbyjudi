@@ -68,6 +68,11 @@ var req = http.request(var_path,function(res){
 				  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
 				}
 				
+			if(jsonsss.content.length>0)
+			{
+				sendTextMessage(sender,"Histoire: "+jsonsss.content);
+			}
+				
 			choiceSave=jsonsss;
 			sendQuickReplies(sender,"Choisir la suite...", second);	
 		}
@@ -282,7 +287,7 @@ app.post('/webhook/', function (req, res) {
 			});
 			} 
 			
-			if(!findChoiceByDescription(choiceSave,text).equals('')){
+			if( findChoiceByDescription(choiceSave,text).length > 0){
 				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
 				sendGET(findChoiceByDescription(choiceSave,text));
 			}
