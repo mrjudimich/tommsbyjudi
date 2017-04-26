@@ -20,7 +20,17 @@ var dataPost= { name: 'newjudi', email: '324222222', password: 'azerty' };
 var choiceSave=new Array();
 
 function sendGET(var_path) {
-var req = http.request(var_path,function(res){
+var options_GET = {
+  hostname: 'tomss.azurewebsites.net',
+  port: 80,
+  path: var_path,
+  method: 'GET',
+  headers: {
+      'Content-Type': 'application/json',
+  }
+};
+
+var req = http.request(options_GET,function(res){
 	var response='';
 	res.setEncoding('utf8');
 	res.on('data', function(chunk) {
@@ -59,8 +69,6 @@ var req = http.request(var_path,function(res){
 });
 req.end();
 }
-
-
 function findChoiceByDescription(data,descriptionSearch)
 {
 	var search="";
@@ -257,17 +265,14 @@ app.post('/webhook/', function (req, res) {
 					var jss=JSON.parse(chunk);
 					console.log('name: ' + jss.name);
 					console.log('token: ' + jss.token);
-					sendTextMessage(sender,"Name :"+jss.name+" Token :"+jss.token );
-					sendGET('http://tomss.azurewebsites.net/book/first-book/chapter/1/action?&token='+jss.token);
+					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
+					sendGET('/book/first-book/chapter/1?token='+jss.token);
+
 				});
 			});
-			} /*
-			if(!findChoiceByDescription(choiceSave,text).equals('')
-			{
-				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
-				
-			}*/
-			sendGET(findChoiceByDescription(choiceSave,text));
+			} 
+			sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
+			
 			// GET URL
 			
             if (event.postback) {
