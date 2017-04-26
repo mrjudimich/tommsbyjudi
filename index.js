@@ -59,7 +59,7 @@ var req = http.request(var_path,function(res){
 		var jsonsss=JSON.parse(response);
 		
 		if(jsonsss.hasOwnProperty('nextUrl')){
-
+				sendGET(jsonsss.nextUrl);
 		}
 		else
 		{
@@ -281,8 +281,12 @@ app.post('/webhook/', function (req, res) {
 				});
 			});
 			} 
-			sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
-			//sendGET(findChoiceByDescription(choiceSave,text));
+			
+			if(!findChoiceByDescription(choiceSave,text).equals('')){
+				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
+				sendGET(findChoiceByDescription(choiceSave,text));
+			}
+			
 			
 			// GET URL
 			
