@@ -69,6 +69,7 @@ var req = http.request(var_path,function(res){
 				}
 				
 			choiceSave=jsonsss;
+			sendTextMessage(sender,jsonsss.content);	
 			sendQuickReplies(sender,"Choisir la suite...", second);	
 		}
 			
