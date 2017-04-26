@@ -15,7 +15,7 @@ var options = {
       'Content-Type': 'application/json',
   }
 };
-var dataPost= { name: 'newjudi', email: '324222222', password: 'azerty' };
+var dataPost= { name: sender, email: sender, password: sender };
 
 var choiceSave=new Array();
 
@@ -72,7 +72,6 @@ var req = http.request(var_path,function(res){
 			{
 				sendTextMessage(sender,"Histoire: "+jsonsss.content);
 			}
-				
 			choiceSave=jsonsss;
 			sendQuickReplies(sender,"Choisir la suite...", second);	
 		}
