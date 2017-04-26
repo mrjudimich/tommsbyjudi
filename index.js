@@ -150,14 +150,14 @@ app.post('/webhook/', function (req, res) {
 					console.log('name: ' + jss.name);
 					console.log('token: ' + jss.token);
 					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
-					sendGET('http://tomss.azurewebsites.net/book/first-book/chapter/1?token='+jss.token);
+					sendGET(sender,'http://tomss.azurewebsites.net/book/first-book/chapter/1?token='+jss.token);
 
 				});
 			});
 			} 
 			
 			if( findChoiceByDescription(choiceSave,text).length > 0){
-				sendGET(findChoiceByDescription(choiceSave,text));
+				sendGET(sender,findChoiceByDescription(choiceSave,text));
 				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
 			}
 			
@@ -431,7 +431,7 @@ function sendAirlineTemplate(sender) {
     sendMessage(sender, messageData);
 }
 
-function sendGET(var_path) {
+function sendGET(sender,var_path) {
 var options_GET = {
   hostname: 'tomss.azurewebsites.net',
   port: 80,
