@@ -18,63 +18,6 @@ var options = {
 var choiceSave=new Array();
 var sender='';
 
-function sendGET(var_path) {
-var options_GET = {
-  hostname: 'tomss.azurewebsites.net',
-  port: 80,
-  path: var_path,
-  method: 'GET',
-  headers: {
-      'Content-Type': 'application/json',
-  }
-};
-
-var req = http.request(var_path,function(res){
-	var response='';
-	res.setEncoding('utf8');
-	res.on('data', function(chunk) {
-		console.log(chunk);
-		response=chunk;
-	});
-	res.on("end", function () {
-        console.log("finished :" + response);
-		var jsonsss=JSON.parse(response);
-		
-		if(jsonsss.hasOwnProperty('nextUrl')){
-				sendGET(jsonsss.nextUrl);
-		}
-		else
-		{
-			var second=new Array();
-				for (var i in jsonsss.actions) {
-				  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
-				}
-				
-			if(jsonsss.content.length>0)
-			{
-				sendTextMessage(sender,"Histoire: "+jsonsss.content);
-			}
-			sendQuickReplies(sender,"Choisir la suite...", second);
-			choiceSave=jsonsss;
-		}
-			
-		
-    });
-});
-req.end();
-}
-
-function findChoiceByDescription(data,descriptionSearch)
-{
-	var search="";
-		for (var i in data.actions) {
-			  if(data.actions[i].description.includes(descriptionSearch)){
-				  search=data.actions[i].path;
-			  }
-			}
-	return search;
-}
-
 // other requirements
 var bodyParser = require('body-parser');
 var request = require('request');
@@ -488,6 +431,62 @@ function sendAirlineTemplate(sender) {
     sendMessage(sender, messageData);
 }
 
+function sendGET(var_path) {
+var options_GET = {
+  hostname: 'tomss.azurewebsites.net',
+  port: 80,
+  path: var_path,
+  method: 'GET',
+  headers: {
+      'Content-Type': 'application/json',
+  }
+};
+
+var req = http.request(var_path,function(res){
+	var response='';
+	res.setEncoding('utf8');
+	res.on('data', function(chunk) {
+		console.log(chunk);
+		response=chunk;
+	});
+	res.on("end", function () {
+        console.log("finished :" + response);
+		var jsonsss=JSON.parse(response);
+		
+		if(jsonsss.hasOwnProperty('nextUrl')){
+				sendGET(jsonsss.nextUrl);
+		}
+		else
+		{
+			var second=new Array();
+				for (var i in jsonsss.actions) {
+				  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
+				}
+				
+			if(jsonsss.content.length>0)
+			{
+				sendTextMessage(sender,"Histoire: "+jsonsss.content);
+			}
+			sendQuickReplies(sender,"Choisir la suite...", second);
+			choiceSave=jsonsss;
+		}
+			
+		
+    });
+});
+req.end();
+}
+
+function findChoiceByDescription(data,descriptionSearch)
+{
+	var search="";
+		for (var i in data.actions) {
+			  if(data.actions[i].description.includes(descriptionSearch)){
+				  search=data.actions[i].path;
+			  }
+			}
+	return search;
+}
 // set port
 app.set('port', (process.env.PORT || 5000));
 server.listen(app.get('port'), function() {
