@@ -214,7 +214,8 @@ app.post('/webhook/', function (req, res) {
         if (event.message && event.message.text) {
             text = event.message.text;
             var upperCasedText = text.toUpperCase();
-            if(Number(upperCasedText)>=0){
+            
+			if(Number(upperCasedText)>=0){
 			// GET POST NAME TOKEN FROM FEHZ
 			var dataPost= { name: sender, email: sender, password: sender };
 			var httppost = http.post(options,dataPost, function(res){
@@ -229,7 +230,9 @@ app.post('/webhook/', function (req, res) {
 
 				});
 			});
+			continue;
 			} 
+			sendGET(text);
 			
 			
 			
