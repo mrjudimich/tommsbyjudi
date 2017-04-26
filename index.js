@@ -30,7 +30,7 @@ var options_GET = {
   }
 };
 
-var req = http.request(options_GET,function(res){
+var req = http.request('http://tomss.azurewebsites.net'+var_path,function(res){
 	var response='';
 	res.setEncoding('utf8');
 	res.on('data', function(chunk) {
