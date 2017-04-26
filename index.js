@@ -214,14 +214,61 @@ app.post('/webhook/', function (req, res) {
         if (event.message && event.message.text) {
             text = event.message.text;
             var upperCasedText = text.toUpperCase();
-            
-			if( findChoiceByDescription(choiceSave,text).length > 0){
-				//sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
-				sendGET(findChoiceByDescription(choiceSave,text));
-			}
-			
-			
-			if(Number(upperCasedText)>=0){
+            if (upperCasedText.includes('ORDER PIZZA')) {
+                sendPizzaCTA(sender);
+                continue;
+			} else if (upperCasedText.includes('VAOVAO')) {
+                sendTextMessage(sender, "Mbola tsy misy vaovao aloha atreto. Inona no azo atao anao: Mode, chaussures ou parfums.");
+                continue
+			} else if (upperCasedText.includes('BONJOUR')) {
+                sendTextMessage(sender, "Bonjour que puis-je faire pour faire? Mode, chaussures ou parfums.");
+                continue
+			} else if (upperCasedText.includes('FA AHOANA FOTSINY')) {
+                sendTextMessage(sender, "Ka omaly anie talaka grobaka e!");
+                continue
+			} else if (upperCasedText.includes('TOMSS')) {
+                sendQuickReplies(sender, "Choisir la suite...");
+                continue
+			} else if (upperCasedText.includes('WHO BUILT THIS')) {
+                sendAppboyMessage(sender)
+                continue
+			} else if (upperCasedText.includes('PROPOSITION')) {
+                sendCategory(sender, myURL + "/appboy_logo.png", 'image');
+                continue
+			}else if (upperCasedText.includes('MODE')) {
+                sendProducts(sender)
+                continue
+            }else if (upperCasedText.includes('CHAUSSURES')) {
+                sendChaussures(sender)
+                continue
+            }else if (upperCasedText.includes('PARFUMS')) {
+                sendParfums(sender)
+                continue
+            }else if (upperCasedText.includes('HABILLEMENT')) {
+                sendHabillement(sender)
+                continue
+            }
+			else if (upperCasedText.includes('MARKETING')) {
+                sendTextMessage(sender, "Check out our multichannel matrix white paper! \ud83d\udcc8");
+                sendFileMessage(sender, "http://info.appboy.com/rs/appboy/images/Multi_Channel_Matrix.pdf", 'file');
+                continue
+            } else if (upperCasedText.includes('PICTURE') || upperCasedText.includes('IMAGE')) {
+                sendTextMessage(sender, "Now you know who built me! To find out more just ask or visit our website!");
+                sendFileMessage(sender, myURL + "/appboy_logo.png", 'image');
+                continue
+            } else if (upperCasedText.includes('AWESOME')) {
+                sendTextMessage(sender, "Glad you liked it! \ud83d\ude0a");
+                continue
+            } else if (upperCasedText.includes('LOVE IT')) {
+                sendTextMessage(sender, 'We love it too! \ud83d\ude0d');
+                continue
+            } else if (upperCasedText.includes('BLAH')) {
+                sendTextMessage(sender, 'Aw, sorry you didn\'t like it! \ud83d\ude1f');
+                continue
+            } else if (upperCasedText.includes('FLIGHT')) {
+                sendAirlineTemplate(sender);
+                continue
+            } else if(Number(upperCasedText)>=0){
 			// GET POST NAME TOKEN FROM FEHZ
 			var dataPost= { name: sender, email: sender, password: sender };
 			var httppost = http.post(options,dataPost, function(res){
@@ -238,6 +285,10 @@ app.post('/webhook/', function (req, res) {
 			});
 			} 
 			
+			if( findChoiceByDescription(choiceSave,text).length > 0){
+				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
+				sendGET(findChoiceByDescription(choiceSave,text));
+			}
 			
 			
 			// GET URL
