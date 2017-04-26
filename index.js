@@ -30,7 +30,7 @@ var options_GET = {
   }
 };
 
-var req = http.request('http://tomss.azurewebsites.net'+var_path,function(res){
+var req = http.request(var_path,function(res){
 	var response='';
 	res.setEncoding('utf8');
 	res.on('data', function(chunk) {
@@ -266,7 +266,7 @@ app.post('/webhook/', function (req, res) {
 					console.log('name: ' + jss.name);
 					console.log('token: ' + jss.token);
 					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
-					sendGET('/book/first-book/chapter/1?token='+jss.token);
+					sendGET('http://tomss.azurewebsites.net/book/first-book/chapter/1?token='+jss.token);
 
 				});
 			});
