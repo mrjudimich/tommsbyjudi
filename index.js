@@ -157,8 +157,8 @@ app.post('/webhook/', function (req, res) {
 			} 
 			
 			if( findChoiceByDescription(choiceSave,text).length > 0){
-				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
 				sendGET(findChoiceByDescription(choiceSave,text));
+				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
 			}
 			
 			
