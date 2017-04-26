@@ -16,6 +16,8 @@ var options = {
   }
 };
 var dataPost= { name: 'judiqsq', email: 'j121212111212', password: 'azerty' };
+var choiceSave=new Array();
+
 
 function sendGET(var_path) {
 var options_GET = {
@@ -55,17 +57,27 @@ var req = http.request(options_GET,function(res){
             }
         ];
 		var jsonsss=JSON.parse(response);
-		var second=new Array();
+		var choice=new Array();
 			for (var i in jsonsss.actions) {
-			  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
+			  choice.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
 			}
 		
-		
-		sendQuickReplies(sender,"Choisir la suite...", third);
+		choiceSave=jsonsss.actions;
+		sendQuickReplies(sender,"Choisir la suite...", choice);
         // print to console when response ends
     });
 });
 req.end();
+}
+function findChoiceByDescription(data,descriptionSearch)
+{
+	var search="";
+		for (var i in data) {
+			  if(data[i].description.includes(descriptionSearch)){
+				  search=data[i].path;
+			  }
+			}
+	return search;
 }
 
 
@@ -215,8 +227,7 @@ app.post('/webhook/', function (req, res) {
                 sendProducts(sender)
                 continue
             }else if (upperCasedText.includes('CHAUSSURES')) {
-				sendTextMessage(sender,"Message "+event.message);
-                sendChaussures(sender)
+				sendChaussures(sender)
                 continue
             }else if (upperCasedText.includes('PARFUMS')) {
                 sendParfums(sender)
@@ -259,10 +270,8 @@ app.post('/webhook/', function (req, res) {
 
 				});
 			});
-			} else if (event.postback) {
-					receivedPostback(event);      
-			}
-			sendTextMessage(sender, text);
+			} 
+			sendTextMessage(sender,"Vous avez taper ceci :"+findChoiceByDescription(choiceSave,text);
 			
 			// GET URL
 			
