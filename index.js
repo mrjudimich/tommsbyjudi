@@ -272,6 +272,18 @@ app.post('/webhook/', function (req, res) {
 			});
 			} 
 			sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
+			var httppost = http.post(options,dataPost, function(res){
+				res.setEncoding('utf8');
+				res.on('data', function(chunk) {
+					console.log('name: ' + chunk);
+					var jss=JSON.parse(chunk);
+					console.log('name: ' + jss.name);
+					console.log('token: ' + jss.token);
+					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
+					sendGET(token);
+
+				});
+			});
 			
 			// GET URL
 			
