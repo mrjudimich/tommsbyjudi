@@ -17,6 +17,8 @@ var options = {
 };
 var dataPost= { name: 'newjudi', email: '324222222', password: 'azerty' };
 
+var choiceSave=new Array();
+
 function sendGET(var_path) {
 var options_GET = {
   hostname: 'tomss.azurewebsites.net',
@@ -60,12 +62,22 @@ var req = http.request(options_GET,function(res){
 			  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
 			}
 		
-		
+		choiceSave=jsonsss;
 		sendQuickReplies(sender,"Choisir la suite...", second);
         // print to console when response ends
     });
 });
 req.end();
+}
+function findChoiceByDescription(data,descriptionSearch)
+{
+	var search="";
+		for (var i in data) {
+			  if(data[i].description.includes(descriptionSearch)){
+				  search=data[i].path;
+			  }
+			}
+	return search;
 }
 
 
@@ -259,7 +271,7 @@ app.post('/webhook/', function (req, res) {
 				});
 			});
 			} 
-			sendTextMessage(sender, text);
+			sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave.options,text));
 			
 			// GET URL
 			
