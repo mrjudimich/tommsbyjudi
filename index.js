@@ -72,9 +72,9 @@ req.end();
 function findChoiceByDescription(data,descriptionSearch)
 {
 	var search="";
-		for (var i in data) {
-			  if(data[i].description.includes(descriptionSearch)){
-				  search=data[i].path;
+		for (var i in data.actions) {
+			  if(data.actions[i].description.includes(descriptionSearch)){
+				  search=data.actions[i].path;
 			  }
 			}
 	return search;
@@ -271,7 +271,7 @@ app.post('/webhook/', function (req, res) {
 				});
 			});
 			} 
-			sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave.options,text));
+			sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
 			
 			// GET URL
 			
