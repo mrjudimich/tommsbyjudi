@@ -15,7 +15,7 @@ var options = {
       'Content-Type': 'application/json',
   }
 };
-var dataPost= { name: 'judiqsq', email: 'j121212111212', password: 'azerty' };
+var dataPost= { name: 'newjudi', email: '324222222', password: 'azerty' };
 
 function sendGET(var_path) {
 var options_GET = {
@@ -67,13 +67,6 @@ var req = http.request(options_GET,function(res){
 });
 req.end();
 }
-
-
-
-
-
-
-
 
 
 // other requirements
