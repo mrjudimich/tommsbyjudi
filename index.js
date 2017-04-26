@@ -70,8 +70,8 @@ var req = http.request(var_path,function(res){
 			{
 				sendTextMessage(sender,"Histoire: "+jsonsss.content);
 			}
+			sendQuickReplies(sender,"Choisir la suite...", second);
 			choiceSave=jsonsss;
-			sendQuickReplies(sender,"Choisir la suite...", second);	
 		}
 			
 		
