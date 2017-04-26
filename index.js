@@ -61,16 +61,17 @@ var req = http.request(var_path,function(res){
 		if(jsonsss.hasOwnProperty('nextUrl')){
 				sendGET(jsonsss.nextUrl);
 		}
-		if(jsonsss.hasOwnProperty('content')){
-				var second=new Array();
+		else
+		{
+			var second=new Array();
 				for (var i in jsonsss.actions) {
 				  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
 				}
 				
 			choiceSave=jsonsss;
-			sendTextMessage(sender,jsonsss.content);	
 			sendQuickReplies(sender,"Choisir la suite...", second);	
 		}
+			
 		
     });
 });
@@ -281,8 +282,11 @@ app.post('/webhook/', function (req, res) {
 			});
 			} 
 			
-			sendTextMessage(sender, "Vous avez choisi : "+findChoiceByDescription(choiceSave,text));
-			sendGET(findChoiceByDescription(choiceSave,text));
+			if(!findChoiceByDescription(choiceSave,text).equals('')){
+				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
+				sendGET(findChoiceByDescription(choiceSave,text));
+			}
+			
 			
 			// GET URL
 			
