@@ -16,7 +16,6 @@ var options = {
 };
 
 var choiceSave=new Array();
-
 var chiffre=1;
 function sendGET(var_path) {
 var options_GET = {
@@ -72,8 +71,8 @@ var req = http.request(var_path,function(res){
 			{
 				sendTextMessage(sender,"Histoire: "+jsonsss.content);
 			}
-			choiceSave.push({"userID":sender,"data":jsonsss});
-			sendQuickReplies(sender,"jsonss :"+jsonss+" Choisir la suite...", second);	
+			choiceSave=jsonsss;
+			sendQuickReplies(sender,"chiffre :"+chiffre+"Choisir la suite...", second);	
 		}
 			
 		
@@ -83,19 +82,14 @@ req.end();
 }
 //12121212112121 test heroku
 
-function findChoiceByDescription(sender,choiceData,descriptionSearch)
+function findChoiceByDescription(data,descriptionSearch)
 {
 	var search="";
-	
-	for (var i in choiceData){
-		if(choiceData[i].userID.includes(sender)){
-			for (var j in choiceData[i].data) {
-			  if(choiceData[i].data.actions[j].description.includes(descriptionSearch)){
-				  search=choiceData[i].data.actions[j].path;
-			  } 
+		for (var i in data.actions) {
+			  if(data.actions[i].description.includes(descriptionSearch)){
+				  search=data.actions[i].path;
+			  }
 			}
-		}
-	};		
 	return search;
 }
 
@@ -292,8 +286,8 @@ app.post('/webhook/', function (req, res) {
 			});
 			} 
 			
-			if( findChoiceByDescription(sender,choiceSave,text).length > 0){
-				sendTextMessage(sender, "Choix: "+findChoiceByDescription(sender,choiceSave,text));
+			if( findChoiceByDescription(choiceSave,text).length > 0){
+				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
 				sendGET(findChoiceByDescription(choiceSave,text));
 			}
 			
