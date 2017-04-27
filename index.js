@@ -72,9 +72,9 @@ var req = http.request(var_path,function(res){
 				sendTextMessage(sender,"Histoire: "+jsonsss.content);
 			}
 			choiceSave=jsonsss;
-			var choiceDate=new Array();
-			choiceDate.push({"userID":sender,"data":jsonss});
-			sendQuickReplies(sender,"chiffre :"+choiceSave[0].userID+" Choisir la suite...", second);	
+			var choiceData=new Array();
+			choiceData.push({"userID":sender,"data":jsonss});
+			sendQuickReplies(sender,"chiffre :"+choiceData[0].userID+" Choisir la suite...", second);	
 		}
 			
 		
