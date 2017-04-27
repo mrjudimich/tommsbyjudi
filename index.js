@@ -73,6 +73,11 @@ var req = http.request(var_path,function(res){
 				sendTextMessage(sender,"Histoire: "+jsonsss.content);
 			}
 			choiceSave=jsonsss;
+			for (var i in choiceData) {
+				  if(choiceData[i].userID.includes(sender)){
+					  delete choiceData[i];
+				  }
+				}
 			choiceData.push({"userID":senderID, "donnee":jsonsss});
 			sendQuickReplies(sender,"DATA : "+choiceData[0].donnee.actions[0].path+" Choisir la suite...", second);	
 		}
