@@ -78,8 +78,12 @@ var req = http.request(var_path,function(res){
 					  delete choiceData[i];
 				  }
 				}
+				var msgList="";
+			for (var iii in choiceData) {
+				msgList+="DATA "+iii+" : "+choiceData[iii].userID;
+				}
 			choiceData.push({"userID":senderID, "donnee":jsonsss});
-			sendQuickReplies(senderID,"DATA : "+choiceData[0].donnee.actions[0].path+" Choisir la suite...", second);	
+			sendQuickReplies(senderID,"MSG LIST : "+msgList+" Choisir la suite...", second);	
 		}
     });
 });
