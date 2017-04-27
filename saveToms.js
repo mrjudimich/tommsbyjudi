@@ -57,9 +57,7 @@ var req = http.request(var_path,function(res){
         ];
 		var jsonsss=JSON.parse(response);
 		
-		if(jsonsss.hasOwnProperty('bookmarks')){
-			sendGET(jsonsss.bookmarks[0].link,senderID);
-		}else if(jsonsss.hasOwnProperty('nextUrl')){
+		if(jsonsss.hasOwnProperty('nextUrl')){
 				sendGET(jsonsss.nextUrl,senderID);
 		}
 		else
@@ -238,7 +236,7 @@ app.post('/webhook/', function (req, res) {
 					console.log('name: ' + jss.name);
 					console.log('token: ' + jss.token);
 					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
-					sendGET('http://tomss.azurewebsites.net/me?token='+jss.token,sender);
+					sendGET('http://tomss.azurewebsites.net/book/first-book/chapter/1?token='+jss.token,sender);
 
 				});
 			});
