@@ -228,14 +228,13 @@ app.post('/webhook/', function (req, res) {
 
 				});
 			});
-			} else if (upperCasedText.includes('BLAH')) {
-                sendTextMessage(sender, 'Aw, sorry you didn\'t like it! \ud83d\ude1f');
-                continue
-            }
+			} 
 			
 			if( findChoiceByDescription(choiceSave,text).length > 0){
 				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
 				sendGET(findChoiceByDescription(choiceSave,text));
+			}else{
+				sendTextMessage(sender, 'Tapez START pour commencer!');
 			}
 			
 			
