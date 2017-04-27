@@ -17,7 +17,7 @@ var options = {
 
 var choiceSave=new Array();
 var chiffre=1;
-function sendGET(var_path) {
+function sendGET(var_path,senderID) {
 var options_GET = {
   hostname: 'tomss.azurewebsites.net',
   port: 80,
@@ -57,7 +57,7 @@ var req = http.request(var_path,function(res){
 		var jsonsss=JSON.parse(response);
 		
 		if(jsonsss.hasOwnProperty('nextUrl')){
-				sendGET(jsonsss.nextUrl);
+				sendGET(jsonsss.nextUrl,senderID);
 		}
 		else
 		{
@@ -72,7 +72,9 @@ var req = http.request(var_path,function(res){
 				sendTextMessage(sender,"Histoire: "+jsonsss.content);
 			}
 			choiceSave=jsonsss;
-			sendQuickReplies(sender," Choisir la suite...", second);	
+			var choiceData=new Array();
+			choiceData.push({"userID":senderID, "name":"judi"});
+			sendQuickReplies(sender,"DATA : "+choiceData[0].userID+" Choisir la suite...", second);	
 		}
     });
 });
@@ -224,7 +226,7 @@ app.post('/webhook/', function (req, res) {
 					console.log('name: ' + jss.name);
 					console.log('token: ' + jss.token);
 					sendTextMessage(sender, "Name :"+jss.name+" Token :"+jss.token );
-					sendGET('http://tomss.azurewebsites.net/book/first-book/chapter/1?token='+jss.token);
+					sendGET('http://tomss.azurewebsites.net/book/first-book/chapter/1?token='+jss.token,sender);
 
 				});
 			});
@@ -232,7 +234,7 @@ app.post('/webhook/', function (req, res) {
 			
 			if( findChoiceByDescription(choiceSave,text).length > 0){
 				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceSave,text));
-				sendGET(findChoiceByDescription(choiceSave,text));
+				sendGET(findChoiceByDescription(choiceSave,text),sender);
 			}else{
 				sendTextMessage(sender, 'Tapez START pour commencer!');
 			}
