@@ -73,8 +73,8 @@ var req = http.request(var_path,function(res){
 			}
 			choiceSave=jsonsss;
 			var choiceData=new Array();
-			choiceData.push({"userID":senderID, "donnee":jsonsss});
-			sendQuickReplies(sender,"DATA : "+choiceData[0].donnee.actions[0].path+" Choisir la suite...", second);	
+			choiceData.push({"userID":senderID, "name":"judi"});
+			sendQuickReplies(sender,"DATA : "+choiceData[0].userID+" Choisir la suite...", second);	
 		}
     });
 });
