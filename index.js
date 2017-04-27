@@ -75,7 +75,7 @@ var req = http.request(var_path,function(res){
 			choiceSave=jsonsss;
 			for (var ii in choiceData) {
 				  if(choiceData[ii].userID.includes(senderID)){
-					  choiceData.splice(i, 1);
+					  choiceData.splice(ii, 1);
 				  }
 				}
 				var msgList="";
