@@ -69,6 +69,7 @@ var req = http.request(var_path,function(res){
 				for (var i in jsonsss.actions) {
 				  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
 				}
+			sendQuickReplies(senderID,"Choisir la suite...", second);		
 				
 			if(jsonsss.content.length>0)
 			{
@@ -82,7 +83,6 @@ var req = http.request(var_path,function(res){
 				}
 			
 			choiceData.push({"userID":senderID, "donnee":jsonsss});
-			sendQuickReplies(senderID,"Choisir la suite...", second);	
 		}
     });
 });
