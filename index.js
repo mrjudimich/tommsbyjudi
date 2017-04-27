@@ -78,12 +78,9 @@ var req = http.request(var_path,function(res){
 					  choiceData.splice(ii, 1);
 				  }
 				}
-				var msgList="";
-			for (var iii in choiceData) {
-				msgList+="DATA "+iii+" : "+choiceData[iii].userID;
-				}
+			
 			choiceData.push({"userID":senderID, "donnee":jsonsss});
-			sendQuickReplies(senderID,"MSG LIST : "+msgList+" Choisir la suite...", second);	
+			sendQuickReplies(senderID,"Choisir la suite...", second);	
 		}
     });
 });
@@ -246,7 +243,7 @@ app.post('/webhook/', function (req, res) {
 			} 
 			
 			if( findChoiceByDescription(choiceData,text,sender).length > 0){
-				sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceData,text,sender));
+				//sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceData,text,sender));
 				sendGET(findChoiceByDescription(choiceData,text,sender),sender);
 			}else{
 				sendTextMessage(sender, 'Tapez START pour commencer!');
