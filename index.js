@@ -70,16 +70,16 @@ var req = http.request(var_path,function(res){
 				
 			if(jsonsss.content.length>0)
 			{
-				sendTextMessage(sender,"Histoire: "+jsonsss.content);
+				sendTextMessage(senderID,"Histoire: "+jsonsss.content);
 			}
 			choiceSave=jsonsss;
-			for (var i in choiceData) {
-				  if(choiceData[i].userID.includes(sender)){
+			for (var ii in choiceData) {
+				  if(choiceData[ii].userID.includes(senderID)){
 					  delete choiceData[i];
 				  }
 				}
 			choiceData.push({"userID":senderID, "donnee":jsonsss});
-			sendQuickReplies(sender,"DATA : "+choiceData[0].donnee.actions[0].path+" Choisir la suite...", second);	
+			sendQuickReplies(senderID,"DATA : "+choiceData[0].donnee.actions[0].path+" Choisir la suite...", second);	
 		}
     });
 });
