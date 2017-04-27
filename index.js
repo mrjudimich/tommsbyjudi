@@ -83,15 +83,15 @@ req.end();
 }
 //12121212112121 test heroku
 
-function findChoiceByDescription(sender,data,descriptionSearch)
+function findChoiceByDescription(sender,choiceData,descriptionSearch)
 {
 	var search="";
 	
-	for (var i in data){
-		if(data[i].userID.includes(sender)){
-			for (var j in data[i].data) {
-			  if(data[i].data.actions[j].description.includes(descriptionSearch)){
-				  search=data[i].data.actions[i].path;
+	for (var i in choiceData){
+		if(choiceData[i].userID.includes(sender)){
+			for (var j in choiceData[i].data) {
+			  if(choiceData[i].data.actions[j].description.includes(descriptionSearch)){
+				  search=choiceData[i].data.actions[j].path;
 			  } 
 			}
 		}
