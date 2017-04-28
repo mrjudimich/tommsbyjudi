@@ -50,11 +50,6 @@ var req = http.request(var_path,function(res){
 		if(jsonsss.hasOwnProperty('content'))
 		{
 			
-			if(jsonsss.content.length>0)
-			{
-				sendTextMessage(senderID,"Histoire: "+jsonsss.content);
-			}
-			
 			for (var ii in choiceData) {
 				  if(choiceData[ii].userID.includes(senderID)){
 					  choiceData.splice(ii, 1);
@@ -67,14 +62,13 @@ var req = http.request(var_path,function(res){
 				for (var k in jsonsss.actions) {
 				  second.push({"content_type":"text", "title":jsonsss.actions[k].description, "payload":jsonsss.actions[k].path});
 				}
+			sendTextMessage(senderID,"Histoire: "+jsonsss.content);
 			sendQuickReplies(senderID,"Choisir la suite...", second);		
 		}
     });
 });
 req.end();
 }
-//12121212112121 test heroku
-
 function findChoiceByDescription(choiceData,descriptionSearch,senderID)
 {
 	var search="";
