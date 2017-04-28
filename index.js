@@ -34,7 +34,7 @@ var req = http.request(var_path,function(res){
 	res.setEncoding('utf8');
 	res.on('data', function(chunk) {
 		console.log(chunk);
-		response+=chunk;
+		response=chunk;
 	});
 	res.on("end", function () {
         console.log("finished :" + response);
