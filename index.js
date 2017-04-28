@@ -65,12 +65,6 @@ var req = http.request(var_path,function(res){
 		else
 		{
 			chiffre+=1;
-			var second=new Array();
-				for (var i in jsonsss.actions) {
-				  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
-				}
-			sendQuickReplies(senderID,"Choisir la suite...", second);		
-				
 			if(jsonsss.content.length>0)
 			{
 				sendTextMessage(senderID,"Histoire: "+jsonsss.content);
@@ -83,6 +77,13 @@ var req = http.request(var_path,function(res){
 				}
 			
 			choiceData.push({"userID":senderID, "donnee":jsonsss});
+			
+			var second=new Array();
+				for (var i in jsonsss.actions) {
+				  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
+				}
+			sendQuickReplies(senderID,"Choisir la suite...", second);		
+				
 		}
     });
 });
