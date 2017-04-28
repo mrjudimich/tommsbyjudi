@@ -17,7 +17,7 @@ var options = {
 
 var choiceSave=new Array();
 var choiceData=new Array();
-var chiffre=1;
+
 function sendGET(var_path,senderID) {
 var options_GET = {
   hostname: 'tomss.azurewebsites.net',
@@ -34,42 +34,27 @@ var req = http.request(var_path,function(res){
 	res.setEncoding('utf8');
 	res.on('data', function(chunk) {
 		console.log(chunk);
-		response=chunk;
+		response+=chunk;
 	});
 	res.on("end", function () {
         console.log("finished :" + response);
-		var third=[
-            {
-                "content_type":"text",
-                "title":"Chaussures! \uD83D\uDC4D",
-                "payload":"0"
-            },
-            {
-                "content_type":"text",
-                "title":"Parfums! \u2764\ufe0f",
-                "payload":"1"
-            },
-            {
-                "content_type":"text",
-                "title":"Habillement \ud83d\ude34",
-                "payload":"next"
-            }
-        ];
+		
 		var jsonsss=JSON.parse(response);
 		
 		if(jsonsss.hasOwnProperty('bookmarks')){
 			sendGET(jsonsss.bookmarks[0].link,senderID);
-		}else if(jsonsss.hasOwnProperty('nextUrl')){
+		}
+		if(jsonsss.hasOwnProperty('nextUrl')){
 				sendGET(jsonsss.nextUrl,senderID);
 		}
-		else
+		if(jsonsss.hasOwnProperty('content'))
 		{
-			chiffre+=1;
+			
 			if(jsonsss.content.length>0)
 			{
 				sendTextMessage(senderID,"Histoire: "+jsonsss.content);
 			}
-			choiceSave=jsonsss;
+			
 			for (var ii in choiceData) {
 				  if(choiceData[ii].userID.includes(senderID)){
 					  choiceData.splice(ii, 1);
@@ -79,11 +64,10 @@ var req = http.request(var_path,function(res){
 			choiceData.push({"userID":senderID, "donnee":jsonsss});
 			
 			var second=new Array();
-				for (var i in jsonsss.actions) {
-				  second.push({"content_type":"text", "title":jsonsss.actions[i].description, "payload":jsonsss.actions[i].path});
+				for (var k in jsonsss.actions) {
+				  second.push({"content_type":"text", "title":jsonsss.actions[k].description, "payload":jsonsss.actions[k].path});
 				}
 			sendQuickReplies(senderID,"Choisir la suite...", second);		
-				
 		}
     });
 });
@@ -247,7 +231,7 @@ app.post('/webhook/', function (req, res) {
 				//sendTextMessage(sender, "Choix: "+findChoiceByDescription(choiceData,text,sender));
 				sendGET(findChoiceByDescription(choiceData,text,sender),sender);
 			} else {
-				sendTextMessage(sender, 'Tapez START pour commencer!');
+				sendTextMessage(sender,'Tapez START pour commencer!');
 			}
 			
 			
