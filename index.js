@@ -62,8 +62,7 @@ var req = http.request(var_path,function(res){
 				for (var k in jsonsss.actions) {
 				  second.push({"content_type":"text", "title":jsonsss.actions[k].description, "payload":jsonsss.actions[k].path});
 				}
-			sendTextMessage(senderID,"Histoire: "+jsonsss.content);
-			sendQuickReplies(senderID,"Choisir la suite...", second);		
+			sendQuickReplies(senderID,jsonsss.content, second);		
 		}
     });
 });
