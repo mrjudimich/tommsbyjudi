@@ -147,53 +147,6 @@ app.get('/webhook/', function (req, res) {
     res.send('Error, wrong token');
 });
 
-var products = require('./menu.json'); // product data stored on the server
-var missdressing_products = require('./products.json'); // product data stored on the server
-
-// handle a URI encoded JSON request as a GET
-app.get('/api/products', function (req, res) {
-    var reqJSON = JSON.parse(decodeURIComponent(req.query.orderData));
-    var orderDetails = reqJSON.order;
-    var response = {"item_data" : []};
-    var subtotal = 0;
-    for (var j = 0; j < orderDetails.length; j++) {
-        var item = orderDetails[j];
-        var product = products.products[item.productID];
-        var title = product.title;
-        var subtitle = "";
-        var product_image = product.image_url;
-        var price = product.price;
-        var extras = item.extras;
-        for (var i = 0; i < extras.length; i++) {
-            var extra = products.extras[extras[i]];
-            price += extra.price;
-            if (extras.length === 1 || i == extras.length - 2) {
-                subtitle += extra.title;
-            } else if (i === extras.length - 1) {
-                subtitle += ' and ' + extra.title;
-            } else {
-                subtitle += extra.title + ", ";
-            }
-        }
-        subtotal += item.quantity * price;
-        response.item_data.push({
-            "title" : title,
-            "subtitle" : subtitle,
-            "price" : price,
-            "quantity" : item.quantity,
-            "image_url" : product_image
-        });
-    }
-    var total_tax = 0.0825 * subtotal;
-    var total_cost = subtotal + total_tax;
-    response.summary = {
-        "subtotal" : subtotal.toFixed(2),
-        "total_tax" : total_tax.toFixed(2),
-        "total_cost" : total_cost.toFixed(2)
-    };
-    res.json(response);
-});
-
 // API endpoint to process messages
 var myURL;
 app.post('/webhook/', function (req, res) {
@@ -308,124 +261,12 @@ function sendQuickReplies(sender, var_text, var_quick) {
  * @param {string} sender - The page-specific Messenger ID of the intended recipient
  * @return nothing
  */
-function sendPizzaCTA(sender) {
-    var messageData = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "button",
-                "text": "We don't yet support ordering pizza via our bot, but you can grab a delicious imaginary pie from the link below!",
-                "buttons": [{
-                    "type": "web_url",
-                    "title": "Order a Pie!",
-                    "url": myURL
-                }]
-            }
-        }
-    };
-
-    // send the message
-    sendMessage(sender, messageData);
-}
 
 /**
  * Sends a Structured Message with the Appboy logo and a link to appboy.com to a given Facebook Messenger ID using a POST request to the Facebook Send API
  * @param {string} sender - The page-specific Messenger ID of the intended recipient
  * @return nothing
  */
-function sendProducts(sender) {
-	
-	var messageData = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-				
-                "elements": missdressing_products.missdressing_products
-            }
-        }
-    };
-
-    // send the message
-    sendMessage(sender, messageData);
-}
-function sendChaussures(sender) {
-    var messageData = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": missdressing_products.chaussures
-            }
-        }
-    };
-
-    // send the message
-    sendMessage(sender, messageData);
-}
-function sendParfums(sender) {
-    var messageData = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-				
-                "elements": missdressing_products.parfums
-            }
-        }
-    };
-
-    // send the message
-    sendMessage(sender, messageData);
-}
-
-function sendHabillement(sender) {
-    var messageData = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-				
-                "elements": missdressing_products.habillement
-            }
-        }
-    };
-
-    // send the message
-    sendMessage(sender, messageData);
-}
-
-
-function sendCategory(sender, url, fileType) {
-    var messageData = {
-		"attachment":{
-            "type":fileType,
-            "payload":{
-                "url": url
-            }
-        },
-    
-        "quick_replies":[
-            {
-                "content_type":"text",
-                "title":"Chaussures! \uD83D\uDC4D",
-                "payload":"CHAUSSURES"
-            },
-            {
-                "content_type":"text",
-                "title":"Parfums! \u2764\ufe0f",
-                "payload":"PARFUMS"
-            },
-            {
-                "content_type":"text",
-                "title":"Habillement \ud83d\ude34",
-                "payload":"HABILLEMENT"
-            }
-        ]
-    }
-    // send the message
-    sendMessage(sender, messageData);
-}
 
 function sendFileMessage(sender, url, fileType) {
     var messageData = {
